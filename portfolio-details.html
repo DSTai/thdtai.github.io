@@ -389,73 +389,151 @@
 </div>
 
 
-  <!-- PROJECT 3: QA BOT -->
-  <div data-aos="fade-up" class="mb-5">
-    <h2>Document-based QA System (RAG + IBM Watson)</h2>
-    <div class="card p-4 shadow-sm">
-      <div class="row align-items-start flex-md-row-reverse">
+ <!-- PROJECT 3: MEDICAL RESEARCH ASSISTANT -->
+<div data-aos="fade-up" class="mb-5">
+  <h2>Medical Research Assistant (Advanced RAG for Biomedical Literature)</h2>
 
-        <div class="col-md-5 mb-3 mb-md-0 text-center">
-          <img src="assets/img/qa.png" class="img-fluid rounded shadow-sm" style="max-height:400px; object-fit:contain;">
-          <p class="mt-2 text-muted" style="font-size:13px;"><em>Document ingestion → vector indexing → semantic retrieval → context-aware generation</em></p>
-          <div class="stat-row justify-content-center mt-3">
-            <span class="stat-chip">RAG Pipeline</span>
-            <span class="stat-chip">Semantic Search</span>
+  <div class="card p-4 shadow-sm">
+    <div class="row align-items-start flex-md-row-reverse">
+
+      <div class="col-md-5 mb-3 mb-md-0 text-center">
+        <img src="assets/img/qa.png"
+             class="img-fluid rounded shadow-sm"
+             style="max-height:400px; object-fit:contain;">
+
+        <p class="mt-2 text-muted" style="font-size:13px;">
+          <em>PDF ingestion → embeddings → FAISS retrieval → Cross-Encoder reranking → citation-aware answer generation</em>
+        </p>
+
+        <div class="stat-row justify-content-center mt-3">
+          <span class="stat-chip">Medical RAG</span>
+          <span class="stat-chip">FAISS</span>
+          <span class="stat-chip">Cross Encoder</span>
+        </div>
+
+        <p class="mt-3" style="font-size:13px;">
+          <strong>Stack:</strong>
+          Python · LangChain · FAISS · Sentence Transformers · Gemini API · Streamlit
+        </p>
+
+        <p class="mt-3" style="font-size:13px;">
+          <strong>Links:</strong>
+          <a href="https://github.com/DSTai/medical-rag-assistant" target="_blank">GitHub</a>
+        </p>
+          <div class="mt-3">
+            <button class="btn-demo" id="openDemoBtn">
+              <span class="live-dot"></span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              Try Live Demo
+            </button>
           </div>
-          <p class="mt-3" style="font-size:13px;">
-            <strong>Stack:</strong> IBM Watson · LangChain · FAISS · Python<br>
-            <em>No public source code (proprietary data)</em>
+      </div>
+
+      <div class="col-md-7">
+
+        <div class="project-block">
+          <span class="project-label label-problem">Problem</span>
+
+          <p>
+            Medical researchers and clinicians frequently work with large collections of
+            scientific papers, clinical reports, and healthcare guidelines.
+            Traditional keyword search often fails to capture semantic meaning,
+            making evidence retrieval slow and inefficient.
+          </p>
+
+          <p>
+            The objective was to build an AI-powered assistant capable of
+            retrieving relevant biomedical evidence and generating grounded answers
+            directly from medical literature.
           </p>
         </div>
 
-        <div class="col-md-7">
-          <div class="project-block">
-            <span class="project-label label-problem">Problem</span>
-            <p>
-              Large organizations accumulate thousands of internal documents — policies, reports, manuals —
-              that are difficult to query with keyword search alone.
-              Users waste time skimming documents manually, or receive incomplete answers because
-              <strong>keyword search cannot understand intent or context</strong>.
-              The goal was to build a system that answers natural language questions accurately
-              by retrieving and reasoning over the right document segments.
-            </p>
-          </div>
-          <div class="project-block">
-            <span class="project-label label-approach">Approach</span>
-            <p>Implemented a full Retrieval-Augmented Generation (RAG) pipeline:</p>
-            <ul>
-              <li><strong>Document ingestion & chunking</strong> — documents split into overlapping text chunks to preserve context across boundaries</li>
-              <li><strong>Vector embedding & FAISS indexing</strong> — chunks embedded into dense vector representations and indexed for fast approximate nearest-neighbor retrieval</li>
-              <li><strong>Semantic retrieval</strong> — user queries embedded and matched against the index to surface contextually relevant passages, not just keyword matches</li>
-              <li><strong>IBM Watson LLM generation</strong> — retrieved context passed to the language model as grounding, producing answers traceable to source documents</li>
-              <li>System constrained to minimize hallucination by grounding generation strictly in retrieved content</li>
-            </ul>
-          </div>
-          <div class="project-block">
-            <span class="project-label label-result">Key Takeaways</span>
-            <ul>
-              <li>Built end-to-end LLM system experience beyond prompt engineering — covering data pipelines, retrieval architecture, and generation constraints</li>
-              <li>RAG meaningfully outperformed keyword search for ambiguous or multi-part questions in internal testing</li>
-              <li>Directly applicable to healthcare knowledge bases: clinical guideline retrieval, patient record summarization, or medical QA systems</li>
-            </ul>
-          </div>
-          <div class="project-block">
-            <span class="project-label label-status">My Role</span>
+        <div class="project-block">
+          <span class="project-label label-approach">Approach</span>
 
-            <p>
-              Designed and implemented the complete RAG architecture,
-              including document ingestion,
-              vector indexing,
-              semantic retrieval,
-              prompt engineering,
-              and IBM Watson integration.
-            </p>
-          </div>
+          <p>
+            Implemented an end-to-end Retrieval-Augmented Generation (RAG) system:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Multi-document PDF ingestion</strong> —
+              automatically processes collections of biomedical research papers.
+            </li>
+
+            <li>
+              <strong>Document chunking & semantic embeddings</strong> —
+              converts document sections into dense vector representations.
+            </li>
+
+            <li>
+              <strong>FAISS vector retrieval</strong> —
+              retrieves candidate passages relevant to user questions.
+            </li>
+
+            <li>
+              <strong>Cross-Encoder reranking</strong> —
+              reorders retrieved passages using transformer-based relevance scoring
+              to improve retrieval precision.
+            </li>
+
+            <li>
+              <strong>Grounded answer generation</strong> —
+              uses Gemini to generate answers strictly from retrieved evidence.
+            </li>
+
+            <li>
+              <strong>Citation-aware responses</strong> —
+              displays source papers and page references for answer verification.
+            </li>
+          </ul>
+        </div>
+
+        <div class="project-block">
+          <span class="project-label label-result">Key Results</span>
+
+          <ul>
+            <li>
+              Built a complete biomedical literature question-answering platform
+              supporting multi-paper retrieval and evidence-based responses.
+            </li>
+
+            <li>
+              Improved retrieval quality through a two-stage retrieval pipeline
+              (FAISS retrieval + Cross-Encoder reranking).
+            </li>
+
+            <li>
+              Enabled users to trace answers back to source documents,
+              increasing transparency and reducing hallucination risk.
+            </li>
+
+            <li>
+              Demonstrated practical application of modern RAG architectures
+              for healthcare and scientific knowledge retrieval.
+            </li>
+          </ul>
+        </div>
+
+        <div class="project-block">
+          <span class="project-label label-status">My Role</span>
+
+          <p>
+            Designed and implemented the complete system architecture,
+            including PDF ingestion, document preprocessing,
+            vector database construction, semantic retrieval,
+            reranking, prompt engineering, citation generation,
+            and Streamlit deployment.
+          </p>
         </div>
 
       </div>
+
     </div>
   </div>
+</div>
 
 </div>
 
