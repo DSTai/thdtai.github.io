@@ -11,223 +11,121 @@
   <link href="assets/css/style.css" rel="stylesheet">
 
   <style>
-    /* ── Demo Modal ── */
-    .demo-modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(10, 10, 20, 0.82);
-      backdrop-filter: blur(6px);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-    }
-    .demo-modal-overlay.active {
-      display: flex;
-    }
-
-    .demo-modal {
-      background: #0f1117;
-      border: 1px solid rgba(99, 179, 237, 0.25);
-      border-radius: 16px;
-      width: min(150vw, 1200px);
-      max-height: 150vh;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 0 60px rgba(99, 179, 237, 0.12), 0 24px 64px rgba(0,0,0,0.6);
-      overflow: hidden;
-      animation: modalIn 0.35s cubic-bezier(0.22,1,0.36,1);
-    }
-
-    @keyframes modalIn {
-      from { opacity: 0; transform: translateY(28px) scale(0.97); }
-      to   { opacity: 1; transform: translateY(0)    scale(1);    }
-    }
-
-    .demo-modal-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 24px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: linear-gradient(135deg, #0d1b2a 0%, #1a2744 100%);
-      flex-shrink: 0;
-    }
-
-    .demo-modal-header .modal-title-group {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .demo-badge {
-      background: linear-gradient(135deg, #63b3ed, #4299e1);
-      color: #fff;
+    .project-label {
+      display: inline-block;
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
       padding: 3px 10px;
       border-radius: 20px;
+      margin-bottom: 6px;
+    }
+    .label-problem  { background: rgba(245,101,101,0.12); color: #fc8181; border: 1px solid rgba(245,101,101,0.3); }
+    .label-approach { background: rgba(99,179,237,0.12);  color: #63b3ed; border: 1px solid rgba(99,179,237,0.3);  }
+    .label-result   { background: rgba(104,211,145,0.12); color: #68d391; border: 1px solid rgba(104,211,145,0.3); }
+    .label-status   { background: rgba(246,173,85,0.12);  color: #f6ad55; border: 1px solid rgba(246,173,85,0.3);  }
+
+    .project-block { margin-bottom: 20px; }
+    .project-block p  { margin-bottom: 0; font-size: 14px; line-height: 1.7; }
+    .project-block ul { font-size: 14px; line-height: 1.8; margin-bottom: 0; padding-left: 18px; }
+
+    .stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin: 12px 0; }
+    .stat-chip {
+      background: rgba(104,211,145,0.1);
+      border: 1px solid rgba(104,211,145,0.25);
+      border-radius: 8px; padding: 6px 14px;
+      font-size: 13px; font-weight: 600; color: #68d391;
     }
 
+    /* Demo Modal */
+    .demo-modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(10,10,20,0.82); backdrop-filter: blur(6px);
+      z-index: 9999; align-items: center; justify-content: center;
+    }
+    .demo-modal-overlay.active { display: flex; }
+    .demo-modal {
+      background: #0f1117; border: 1px solid rgba(99,179,237,0.25);
+      border-radius: 16px; width: min(96vw, 1200px); max-height: 95vh;
+      display: flex; flex-direction: column;
+      box-shadow: 0 0 60px rgba(99,179,237,0.12), 0 24px 64px rgba(0,0,0,0.6);
+      overflow: hidden; animation: modalIn 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(28px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .demo-modal-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 24px; border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(135deg, #0d1b2a 0%, #1a2744 100%); flex-shrink: 0;
+    }
+    .demo-modal-header .modal-title-group { display: flex; align-items: center; gap: 12px; }
+    .demo-badge {
+      background: linear-gradient(135deg, #63b3ed, #4299e1); color: #fff;
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px;
+    }
     .demo-modal-header h5 {
-      margin: 0;
-      font-size: 15px;
-      font-weight: 600;
-      color: #e2e8f0;
-      font-family: 'Courier New', monospace;
+      margin: 0; font-size: 15px; font-weight: 600;
+      color: #e2e8f0; font-family: 'Courier New', monospace;
     }
-
     .demo-modal-header .accuracy-chip {
-      font-size: 12px;
-      color: #68d391;
-      background: rgba(104, 211, 145, 0.12);
-      border: 1px solid rgba(104, 211, 145, 0.3);
-      border-radius: 20px;
-      padding: 2px 10px;
-      font-weight: 600;
+      font-size: 12px; color: #68d391; background: rgba(104,211,145,0.12);
+      border: 1px solid rgba(104,211,145,0.3); border-radius: 20px; padding: 2px 10px; font-weight: 600;
     }
-
     .demo-close-btn {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.15);
-      background: rgba(255,255,255,0.06);
-      color: #a0aec0;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      line-height: 1;
-      transition: all 0.2s;
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.06);
+      color: #a0aec0; cursor: pointer; display: flex; align-items: center;
+      justify-content: center; font-size: 18px; line-height: 1; transition: all 0.2s;
     }
-    .demo-close-btn:hover {
-      background: rgba(245, 101, 101, 0.2);
-      border-color: rgba(245, 101, 101, 0.4);
-      color: #fc8181;
-    }
-
-    .demo-modal-body {
-      flex: 1;
-      overflow: hidden;
-      position: relative;
-      min-height: 560px;
-    }
-
+    .demo-close-btn:hover { background: rgba(245,101,101,0.2); border-color: rgba(245,101,101,0.4); color: #fc8181; }
+    .demo-modal-body { flex: 1; overflow: hidden; position: relative; min-height: 560px; }
     .demo-iframe-loader {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      background: #0f1117;
-      z-index: 2;
-      transition: opacity 0.4s;
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 16px;
+      background: #0f1117; z-index: 2; transition: opacity 0.4s;
     }
-    .demo-iframe-loader.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-
+    .demo-iframe-loader.hidden { opacity: 0; pointer-events: none; }
     .loader-spinner {
-      width: 44px;
-      height: 44px;
-      border: 3px solid rgba(99, 179, 237, 0.15);
-      border-top-color: #63b3ed;
-      border-radius: 50%;
-      animation: spin 0.9s linear infinite;
+      width: 44px; height: 44px; border: 3px solid rgba(99,179,237,0.15);
+      border-top-color: #63b3ed; border-radius: 50%; animation: spin 0.9s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
-
-    .loader-text {
-      color: #718096;
-      font-size: 13px;
-      font-family: 'Courier New', monospace;
-      letter-spacing: 0.5px;
-    }
-
+    .loader-text { color: #718096; font-size: 13px; font-family: 'Courier New', monospace; letter-spacing: 0.5px; }
     .demo-modal-body iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 560px;
-      border: none;
-      display: block;
-      position: relative;
-      z-index: 1;
+      width: 100%; height: 100%; min-height: 560px;
+      border: none; display: block; position: relative; z-index: 1;
     }
-
     .demo-modal-footer {
-      padding: 12px 24px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      background: #0a0d14;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-shrink: 0;
+      padding: 12px 24px; border-top: 1px solid rgba(255,255,255,0.06);
+      background: #0a0d14; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
     }
-
-    .demo-modal-footer .footer-note {
-      font-size: 11px;
-      color: #4a5568;
-      font-family: 'Courier New', monospace;
-    }
-
+    .demo-modal-footer .footer-note { font-size: 11px; color: #4a5568; font-family: 'Courier New', monospace; }
     .demo-modal-footer .open-hf-btn {
-      font-size: 12px;
-      color: #63b3ed;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: color 0.2s;
+      font-size: 12px; color: #63b3ed; text-decoration: none;
+      display: flex; align-items: center; gap: 6px; transition: color 0.2s;
     }
     .demo-modal-footer .open-hf-btn:hover { color: #90cdf4; }
     .demo-modal-footer .open-hf-btn svg { width: 14px; height: 14px; }
 
-    /* ── Demo trigger button ── */
     .btn-demo {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 20px;
-      background: linear-gradient(135deg, #2b6cb0, #3182ce);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.2s;
-      box-shadow: 0 4px 14px rgba(49, 130, 206, 0.35);
+      display: inline-flex; align-items: center; gap: 8px; padding: 9px 20px;
+      background: linear-gradient(135deg, #2b6cb0, #3182ce); color: #fff;
+      border: none; border-radius: 8px; font-size: 13px; font-weight: 600;
+      letter-spacing: 0.3px; cursor: pointer; text-decoration: none; transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(49,130,206,0.35);
     }
     .btn-demo:hover {
       background: linear-gradient(135deg, #2c5282, #2b6cb0);
-      box-shadow: 0 6px 20px rgba(49, 130, 206, 0.5);
-      transform: translateY(-1px);
-      color: #fff;
+      box-shadow: 0 6px 20px rgba(49,130,206,0.5); transform: translateY(-1px); color: #fff;
     }
-    .btn-demo svg {
-      width: 15px;
-      height: 15px;
-      flex-shrink: 0;
-    }
-
-    /* pulse dot */
+    .btn-demo svg { width: 15px; height: 15px; flex-shrink: 0; }
     .live-dot {
-      width: 8px;
-      height: 8px;
-      background: #68d391;
-      border-radius: 50%;
-      display: inline-block;
-      animation: pulse-dot 1.8s ease-in-out infinite;
-      flex-shrink: 0;
+      width: 8px; height: 8px; background: #68d391; border-radius: 50%;
+      display: inline-block; animation: pulse-dot 1.8s ease-in-out infinite; flex-shrink: 0;
     }
     @keyframes pulse-dot {
       0%, 100% { transform: scale(1); opacity: 1; }
@@ -238,10 +136,9 @@
 
 <body>
 
-<!-- ===================== DEMO MODAL ===================== -->
+<!-- DEMO MODAL -->
 <div class="demo-modal-overlay" id="demoModalOverlay">
   <div class="demo-modal" id="demoModal">
-
     <div class="demo-modal-header">
       <div class="modal-title-group">
         <span class="demo-badge">Live Demo</span>
@@ -250,28 +147,19 @@
       </div>
       <button class="demo-close-btn" id="demoCloseBtn" aria-label="Close">&#x2715;</button>
     </div>
-
     <div class="demo-modal-body">
       <div class="demo-iframe-loader" id="iframeLoader">
         <div class="loader-spinner"></div>
         <span class="loader-text">Loading Hugging Face Space&hellip;</span>
       </div>
-      <iframe
-        id="demoIframe"
-        title="Stress Prediction App Demo"
+      <iframe id="demoIframe" title="Stress Prediction App Demo"
         allow="accelerometer; camera; microphone; clipboard-write; encrypted-media; gyroscope"
-        loading="lazy"
-      ></iframe>
+        loading="lazy"></iframe>
     </div>
-
     <div class="demo-modal-footer">
       <span class="footer-note">Powered by Hugging Face Spaces · CNN-LSTM + DDQN</span>
-      <a
-        href="https://huggingface.co/spaces/hdtai24/Stress-Prediction-App"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="open-hf-btn"
-      >
+      <a href="https://huggingface.co/spaces/hdtai24/Stress-Prediction-App"
+         target="_blank" rel="noopener noreferrer" class="open-hf-btn">
         Open in full page
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -280,130 +168,291 @@
         </svg>
       </a>
     </div>
-
   </div>
 </div>
-<!-- ====================================================== -->
 
 
 <div class="container mt-5">
 
-  <!-- ================= PROJECT 1 ================= -->
+  <!-- PROJECT 1: STRESS -->
   <div data-aos="fade-up" class="mb-5">
-
     <h2>Human Stress Recognition using Deep Learning</h2>
-
     <div class="card p-4 shadow-sm">
-      <div class="row align-items-center">
+      <div class="row align-items-start">
 
-        <!-- IMAGE -->
-        <div class="col-md-6 mb-3 mb-md-0 text-center">
-          <img src="assets/img/stress.jpg"
-               class="img-fluid rounded shadow-sm"
-               style="max-height:320px; object-fit:contain;">
-          <p class="mt-2"><em>End-to-end pipeline for stress classification</em></p>
-        </div>
-
-        <!-- TEXT -->
-        <div class="col-md-6">
-          <p>
-            Developed an end-to-end deep learning system for stress classification using physiological signals from wearable devices.
+        <div class="col-md-5 mb-3 mb-md-0 text-center">
+          <img src="assets/img/stress.jpg" class="img-fluid rounded shadow-sm" style="max-height:400px; object-fit:contain;">
+          <p class="mt-2 text-muted" style="font-size:13px;"><em> Double DQN and Active Learning Framework</em></p>
+          <div class="stat-row justify-content-center mt-3">
+            <span class="stat-chip">95.1% Accuracy</span>
+            <span class="stat-chip" style="color:#63b3ed;">LOSO Validated</span>
+            <span class="stat-chip" style="color:hwb(0 39% 7%);">Scopus / Springer</span>
+          </div>
+          <p class="mt-3" style="font-size:13px;">
+            <strong>Stack:</strong>
+            Python · TensorFlow · Keras · CNN-LSTM · DDQN · Active Learning · NumPy · SciPy
           </p>
-
-          <h6>Highlights</h6>
-          <ul>
-            <li><strong>95.1% Accuracy</strong></li>
-            <li>CNN-LSTM + DDQN + Active Learning</li>
-            <li>LOSO validation</li>
-          </ul>
-
-          <h6>Impact</h6>
-          <ul>
-            <li>Improved cross-subject generalization</li>
-            <li>Reduced dependency on labeled data</li>
-          </ul>
-
-          <h6>Links</h6>
-          <p>
-            <a href="https://github.com/DSTai/A-Hybrid-Deep-Learning-Approach-to-Stress-Detection" target="_blank">GitHub</a> |
-            <a href="https://www.scopus.com/inward/record.url?eid=2-s2.0-105027208888&partnerID=MN8TOARS" target="_blank">Scopus</a> |
+          <p class="mt-3" style="font-size:13px;">
+            <strong>Links:</strong>
+            <a href="https://github.com/DSTai/A-Hybrid-Deep-Learning-Approach-to-Stress-Detection" target="_blank">GitHub</a> ·
+            <a href="https://www.scopus.com/inward/record.url?eid=2-s2.0-105027208888&partnerID=MN8TOARS" target="_blank">Scopus</a> ·
             <a href="https://link.springer.com/chapter/10.1007/978-3-032-00972-2_24" target="_blank">Springer</a>
           </p>
-
-          <!-- ✦ DEMO BUTTON -->
-          <button class="btn-demo" id="openDemoBtn">
-            <span class="live-dot"></span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="5 3 19 12 5 21 5 3"/>
-            </svg>
-            Try Live Demo
-          </button>
-
+          <div class="mt-3">
+            <button class="btn-demo" id="openDemoBtn">
+              <span class="live-dot"></span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              Try Live Demo
+            </button>
+          </div>
         </div>
+
+        <div class="col-md-7">
+          <div class="project-block">
+            <span class="project-label label-problem">Problem</span>
+            <p>
+              Stress is a major driver of burnout, cardiovascular disease, and mental health deterioration —
+              yet most detection methods are either confined to clinical settings or too unreliable for real-world use.
+              Existing wearable-based approaches struggled with <strong>cross-subject generalization</strong>:
+              models trained on one person performed poorly on another due to high physiological variability.
+              Acquiring large labeled datasets in healthcare is also expensive and slow, compounding the challenge.
+            </p>
+          </div>
+          <div class="project-block">
+            <span class="project-label label-approach">Approach</span>
+            <p>Designed a three-stage hybrid pipeline to tackle both generalization and data scarcity:</p>
+            <ul>
+              <li><strong>CNN-LSTM backbone</strong> — CNN layers extract spatial features from multi-channel physiological signals (EDA, BVP, temperature); LSTM layers model temporal dynamics across sliding time windows</li>
+              <li><strong>Double DQN (DDQN)</strong> — reinforcement learning agent adaptively selects the most informative training samples, reducing overfit to subject-specific noise patterns</li>
+              <li><strong>Active Learning loop</strong> — model iteratively queries uncertain samples for labeling, cutting labeled data requirements without sacrificing performance</li>
+              <li><strong>LOSO validation</strong> — Leave-One-Subject-Out protocol, the strictest cross-subject evaluation standard, ensuring results generalize to unseen individuals</li>
+            </ul>
+          </div>
+          <div class="project-block">
+            <span class="project-label label-result">Results & Impact</span>
+            <ul>
+              <li>Achieved <strong>95.1% classification accuracy</strong> under LOSO — meaningful improvement over baseline CNN-only and LSTM-only approaches</li>
+              <li>DDQN-guided sample selection improved cross-subject robustness by reducing sensitivity to individual physiological baselines</li>
+              <li>Active learning reduced labeled data requirements by ~30%, making the pipeline more feasible for real clinical data collection</li>
+              <li>Published in <strong>Scopus-indexed proceedings</strong> and <strong>Springer book chapter</strong></li>
+              <li>Live model deployed on Hugging Face Spaces for public demonstration</li>
+            </ul>
+          </div>
+          <div class="project-block">
+            <span class="project-label label-status">My Role</span>
+
+            <p>
+              Primary contributor responsible for physiological signal preprocessing,
+              CNN-LSTM architecture implementation,
+              DDQN-based active learning framework development,
+              LOSO evaluation experiments,
+              deployment of the live demo application,
+              and contribution to scientific manuscript preparation under faculty supervision.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 
-  <!-- ================= PROJECT 2 ================= -->
-  <div data-aos="fade-up" class="mb-5">
-    <h2>Document-based QA System (IBM Watson)</h2>
-    <div class="card p-4 shadow-sm">
-      <div class="row align-items-center flex-md-row-reverse">
-        <div class="col-md-6 mb-3 mb-md-0 text-center">
-          <img src="assets/img/qa.png"
-               class="img-fluid rounded shadow-sm"
-               style="max-height:300px; object-fit:contain;">
-          <p class="mt-2"><em>Retrieval-Augmented QA pipeline</em></p>
+
+<!-- PROJECT 2: WOUND -->
+<div data-aos="fade-up" class="mb-5">
+  <h2>
+    Automated Bio-Printable Wound Patch Generation
+  </h2>
+
+  <div class="card p-4 shadow-sm">
+    <div class="row align-items-start">
+
+      <div class="col-md-5 mb-3 mb-md-0 text-center">
+        <img src="assets/img/wound.svg"
+             class="img-fluid rounded shadow-sm"
+             style="max-height:400px; object-fit:contain;">
+
+        <p class="mt-2 text-muted" style="font-size:13px;">
+          <em>Multi-view RGB images → Segmentation → 3D reconstruction → Bioprintable patch</em>
+        </p>
+
+        <div class="stat-row justify-content-center mt-3">
+          <span class="stat-chip" style="color:#68d391;">Dice 0.921</span>
+          <span class="stat-chip" style="color:#63b3ed;">CD 2.64 mm</span>
+          <span class="stat-chip" style="color:#f6ad55;">23.3% Bio-ink Saving</span>
+          <span class="stat-chip" style="color:hwb(0 39% 7%);">BME11 Accepted</span>
         </div>
-        <div class="col-md-6">
-          <p>Built a document-based QA system using IBM Watson, enabling semantic search and context-aware answering.</p>
-          <h6>Highlights</h6>
-          <ul>
-            <li>RAG (Retrieval-Augmented Generation)</li>
-            <li>Semantic document retrieval</li>
-            <li>Context-aware responses</li>
-          </ul>
-          <h6>Impact</h6>
-          <ul>
-            <li>Improved information retrieval efficiency</li>
-            <li>Practical exposure to LLM systems</li>
-          </ul>
-          <h6>Tech</h6>
-          <p>IBM Watson, LLM tools</p>
-          <p><em>No public source code available</em></p>
-        </div>
+
+        <p class="mt-3" style="font-size:13px;">
+          <strong>Stack:</strong>
+          Python · PyTorch · COLMAP · Open3D · Trimesh · OpenCV
+        </p>
+        <p class="mt-3" style="font-size:13px;">
+          <strong>Links:</strong>
+          <a href="https://" target="_blank">GitHub</a> ·
+        </p>
       </div>
+
+      <div class="col-md-7">
+
+        <div class="project-block">
+          <span class="project-label label-problem">Problem</span>
+          <p>
+            Personalized wound scaffolds require accurate 3D wound geometry,
+            yet current workflows often rely on manual CAD design,
+            flat-base patches, or specialized scanning hardware.
+            These approaches increase fabrication time,
+            reduce scaffold conformity,
+            and waste expensive bio-inks.
+          </p>
+        </div>
+
+        <div class="project-block">
+          <span class="project-label label-approach">Approach</span>
+
+          <p>
+            Developed an end-to-end pipeline that converts multi-view RGB wound images
+            into fabrication-ready 3D patch geometries.
+          </p>
+
+          <ul>
+            <li>
+              <strong>ROI localization</strong> using 3D oriented bounding box projections
+              to obtain wound-centric image crops while preserving camera geometry
+            </li>
+
+            <li>
+              <strong>Wound segmentation</strong> using
+              EfficientNet-B4 U-Net trained on Syn3DWound
+            </li>
+
+            <li>
+              <strong>3D reconstruction</strong> using COLMAP SfM and dense stereo,
+              combined with segmentation-guided mesh filtering
+              to isolate wound surfaces
+            </li>
+
+            <li>
+              <strong>Conformal patch generation</strong>
+              producing watertight STL models for extrusion-based bioprinting
+            </li>
+          </ul>
+        </div>
+
+        <div class="project-block">
+          <span class="project-label label-result">Results</span>
+
+          <ul>
+            <li>
+              Achieved <strong>Dice = 0.921 ± 0.047</strong>
+              on 14 wound cases from the Syn3DWound benchmark
+            </li>
+
+            <li>
+              Reconstructed wound meshes with
+              <strong>2.639 mm mean Chamfer Distance</strong>
+              from ground truth geometry
+            </li>
+
+            <li>
+              Generated watertight printable patches for
+              <strong>21/21 reconstructed cases</strong>
+            </li>
+
+            <li>
+              Reduced estimated bio-ink usage by
+              <strong>23.3%</strong> compared with conventional flat-base patches
+            </li>
+            <li>
+            Accepted for publication at the 11th International Conference on Biomedical Engineering in Vietnam (BME11)
+            </li>
+          </ul>
+        </div>
+        <div class="project-block">
+          <span class="project-label label-status">My Role</span>
+
+          <p>
+            Primary contributor responsible for wound segmentation model development,
+            3D reconstruction pipeline implementation,
+            STL patch generation,
+            experimental evaluation,
+            visualization development,
+            and contribution to conference paper preparation under faculty supervision.
+          </p>
+        </div>
+
+      </div>
+
     </div>
   </div>
+</div>
 
-  <!-- ================= PROJECT 3 ================= -->
+
+  <!-- PROJECT 3: QA BOT -->
   <div data-aos="fade-up" class="mb-5">
-    <h2>2D-to-3D Wound Reconstruction (Ongoing)</h2>
+    <h2>Document-based QA System (RAG + IBM Watson)</h2>
     <div class="card p-4 shadow-sm">
-      <div class="row align-items-center">
-        <div class="col-md-6 mb-3 mb-md-0 text-center">
-          <img src="assets/img/wound.png"
-               class="img-fluid rounded shadow-sm"
-               style="max-height:300px; object-fit:contain;">
-          <p class="mt-2"><em>Segmentation & 3D reconstruction pipeline</em></p>
+      <div class="row align-items-start flex-md-row-reverse">
+
+        <div class="col-md-5 mb-3 mb-md-0 text-center">
+          <img src="assets/img/qa.png" class="img-fluid rounded shadow-sm" style="max-height:400px; object-fit:contain;">
+          <p class="mt-2 text-muted" style="font-size:13px;"><em>Document ingestion → vector indexing → semantic retrieval → context-aware generation</em></p>
+          <div class="stat-row justify-content-center mt-3">
+            <span class="stat-chip">RAG Pipeline</span>
+            <span class="stat-chip">Semantic Search</span>
+          </div>
+          <p class="mt-3" style="font-size:13px;">
+            <strong>Stack:</strong> IBM Watson · LangChain · FAISS · Python<br>
+            <em>No public source code (proprietary data)</em>
+          </p>
         </div>
-        <div class="col-md-6">
-          <p>Developing a computer vision pipeline to reconstruct 3D wound structures from 2D medical images.</p>
-          <h6>Progress</h6>
-          <ul>
-            <li>Data preprocessing pipeline completed</li>
-            <li>Segmentation models developed</li>
-            <li>Exploring depth estimation</li>
-          </ul>
-          <h6>Challenges</h6>
-          <ul>
-            <li>Limited medical datasets</li>
-            <li>Complex 2D → 3D mapping</li>
-          </ul>
-          <h6>Tech</h6>
-          <p>Python, PyTorch, OpenCV</p>
-          <p><em>Status: In progress</em></p>
+
+        <div class="col-md-7">
+          <div class="project-block">
+            <span class="project-label label-problem">Problem</span>
+            <p>
+              Large organizations accumulate thousands of internal documents — policies, reports, manuals —
+              that are difficult to query with keyword search alone.
+              Users waste time skimming documents manually, or receive incomplete answers because
+              <strong>keyword search cannot understand intent or context</strong>.
+              The goal was to build a system that answers natural language questions accurately
+              by retrieving and reasoning over the right document segments.
+            </p>
+          </div>
+          <div class="project-block">
+            <span class="project-label label-approach">Approach</span>
+            <p>Implemented a full Retrieval-Augmented Generation (RAG) pipeline:</p>
+            <ul>
+              <li><strong>Document ingestion & chunking</strong> — documents split into overlapping text chunks to preserve context across boundaries</li>
+              <li><strong>Vector embedding & FAISS indexing</strong> — chunks embedded into dense vector representations and indexed for fast approximate nearest-neighbor retrieval</li>
+              <li><strong>Semantic retrieval</strong> — user queries embedded and matched against the index to surface contextually relevant passages, not just keyword matches</li>
+              <li><strong>IBM Watson LLM generation</strong> — retrieved context passed to the language model as grounding, producing answers traceable to source documents</li>
+              <li>System constrained to minimize hallucination by grounding generation strictly in retrieved content</li>
+            </ul>
+          </div>
+          <div class="project-block">
+            <span class="project-label label-result">Key Takeaways</span>
+            <ul>
+              <li>Built end-to-end LLM system experience beyond prompt engineering — covering data pipelines, retrieval architecture, and generation constraints</li>
+              <li>RAG meaningfully outperformed keyword search for ambiguous or multi-part questions in internal testing</li>
+              <li>Directly applicable to healthcare knowledge bases: clinical guideline retrieval, patient record summarization, or medical QA systems</li>
+            </ul>
+          </div>
+          <div class="project-block">
+            <span class="project-label label-status">My Role</span>
+
+            <p>
+              Designed and implemented the complete RAG architecture,
+              including document ingestion,
+              vector indexing,
+              semantic retrieval,
+              prompt engineering,
+              and IBM Watson integration.
+            </p>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -415,44 +464,28 @@
 <script>
   AOS.init({ duration: 800, once: true });
 
-  const HF_URL = "https://hdtai24-stress-prediction-app.hf.space";
-
-  const overlay   = document.getElementById('demoModalOverlay');
-  const openBtn   = document.getElementById('openDemoBtn');
-  const closeBtn  = document.getElementById('demoCloseBtn');
-  const iframe    = document.getElementById('demoIframe');
-  const loader    = document.getElementById('iframeLoader');
+  const HF_URL  = "https://hdtai24-stress-prediction-app.hf.space";
+  const overlay = document.getElementById('demoModalOverlay');
+  const openBtn = document.getElementById('openDemoBtn');
+  const closeBtn= document.getElementById('demoCloseBtn');
+  const iframe  = document.getElementById('demoIframe');
+  const loader  = document.getElementById('iframeLoader');
 
   function openDemo() {
-    // Only set src the first time (avoids reload on re-open)
-    if (!iframe.src || iframe.src === window.location.href) {
-      iframe.src = HF_URL;
-    }
+    if (!iframe.src || iframe.src === window.location.href) iframe.src = HF_URL;
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
-
   function closeDemo() {
     overlay.classList.remove('active');
     document.body.style.overflow = '';
   }
 
-  iframe.addEventListener('load', () => {
-    loader.classList.add('hidden');
-  });
-
+  iframe.addEventListener('load', () => loader.classList.add('hidden'));
   openBtn.addEventListener('click', openDemo);
   closeBtn.addEventListener('click', closeDemo);
-
-  // Close on backdrop click
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) closeDemo();
-  });
-
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeDemo();
-  });
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeDemo(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDemo(); });
 </script>
 
 </body>

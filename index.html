@@ -24,17 +24,41 @@
   <div class="d-flex flex-column">
 
     <div class="profile text-center">
+
+      <img src="assets/img/profile-1.jpg"
+          alt="Tran Huynh Duc Tai"
+          class="img-fluid rounded-circle profile-img">
+
       <h1 class="text-light">Tran Huynh Duc Tai</h1>
+
       <div class="social-links mt-3">
-        <a href="https://github.com/DSTai"><i class="bx bxl-github"></i></a>
-        <a href="#"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/DSTai" target="_blank">
+          <i class="bx bxl-github"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/thdtai/" target="_blank">
+          <i class="bx bxl-linkedin"></i>
+        </a>
       </div>
+
+      <div class="mt-3">
+        <a href="assets/files/TranHuynhDucTai_CV.pdf"
+          target="_blank"
+          class="download-cv-btn">
+          <i class="bx bx-download"></i>
+          Resume
+        </a>
+      </div>
+
     </div>
 
     <nav id="navbar" class="nav-menu navbar">
       <ul>
         <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> Home</a></li>
         <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> About</a></li>
+        <li><a href="#education" class="nav-link scrollto"><i class="bx bxs-graduation"></i> Education</a></li>
+        <li><a href="#publications" class="nav-link scrollto"><i class="bx bx-file"></i>Publications</a></li>
+        <li><a href="#experience" class="nav-link scrollto"><i class="bx bx-briefcase"></i> Experience</a></li>
         <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-code"></i> Skills</a></li>
         <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book"></i> Projects</a></li>
         <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> Contact</a></li>
@@ -47,7 +71,15 @@
 <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
   <div class="hero-container" data-aos="fade-in">
     <h1>Tran Huynh Duc Tai</h1>
-    <p>I'm <span class="typed" data-typed-items="AI Engineer, Machine Learning Engineer, Computer Vision Enthusiast"></span></p>
+    <p>
+      <span class="typed"
+        data-typed-items="
+          AI Engineer,
+          Healthcare AI,
+          Computer Vision,
+          Machine Learning Research">
+      </span>
+    </p>
   </div>
 </section>
 
@@ -59,16 +91,263 @@
     <div class="section-title">
       <h2>About</h2>
       <p>
-        AI Engineer with experience in deep learning, computer vision, and data-driven applications.
-        Developed CNN-LSTM models for stress recognition, built RAG systems with LLMs, and designed ETL pipelines.
-        Interested in healthcare AI and working in international environments.
+       I'm an AI Engineer focused on <strong>Healthcare AI</strong> and <strong>Computer Vision</strong>.
+        My work spans physiological signal processing, medical image analysis, 3D reconstruction, and retrieval-augmented AI systems. I enjoy building end-to-end solutions that combine machine learning research with practical deployment, transforming raw clinical data into actionable insights.
+        My long-term interest lies in building AI-powered healthcare systems that can operate reliably outside laboratory environments, enabling real-world clinical impact.
       </p>
     </div>
   </div>
 </section>
+<!-- EDUCATION -->
+<section id="education" class="resume section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Education</h2>
+    </div>
+
+    <div class="resume-item">
+      <h4>Bachelor of Science in Data Science</h4>
+      <h5>International University – Vietnam National University Ho Chi Minh City</h5>
+
+      <p>
+        Focus areas: Machine Learning, Deep Learning,
+        Computer Vision, Data Mining, Artificial Intelligence,
+        and Statistical Learning.
+      </p>
+    </div>
+
+  </div>
+</section>
+<!-- PUBLICATIONS -->
+<section id="publications" class="resume">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Publications</h2>
+    </div>
+
+    <div class="resume-item">
+      <h4>
+        A Hybrid Deep Learning Approach to Stress Detection:
+        Integrating CNN-LSTM with Reinforcement Learning and Active Learning
+      </h4>
+
+      <h5>2026</h5>
+
+      <p>
+        <strong>Authors:</strong>
+        Tran, H.D.T., Nguyen, K.T., Jayatilake, S.,
+        Ho, V.L., Nguyen, T.T.Q.
+      </p>
+
+      <p>
+        Published in
+        <em>
+          The 14th Conference on Information Technology and its Applications (CITA 2025)
+        </em>,
+        Springer Lecture Notes in Networks and Systems (LNNS), Vol. 1581.
+      </p>
+
+      <p>
+        This work proposes a hybrid framework combining CNN-LSTM,
+        Double Deep Q-Networks (DDQN), and Active Learning for stress recognition
+        from physiological respiratory signals, achieving
+        <strong>95.1% classification accuracy</strong>.
+      </p>
+
+      <p>
+        <a href="https://doi.org/10.1007/978-3-032-00972-2_24"
+           target="_blank">
+          View Publication (DOI)
+        </a>
+      </p>
+    </div>
+
+    <div class="resume-item">
+      <h4>
+        Automated Surface-to-Solid Conversion for Bio-Printable Patch Fabrication
+        from Three-Dimensional Wound Surface Models
+      </h4>
+
+      <h5>2026</h5>
+
+      <p>
+        <strong>Authors:</strong>
+        Nguyen, P.T.A., Tran, C., Tran, H.D.T.,
+        Pham, T.T.H., et al.
+      </p>
+
+      <p>
+        Accepted at
+        <em>
+          The 11th International Conference on Biomedical Engineering in Vietnam (BME11)
+        </em>.
+      </p>
+
+      <p>
+        This work presents an automated pipeline for converting reconstructed
+        wound surface models into fabrication-ready bio-printable patches.
+        The framework integrates wound segmentation, 3D reconstruction,
+        mesh processing, and conformal patch generation for personalized
+        wound treatment applications.
+      </p>
+
+      <p>
+        Key results include:
+      </p>
+
+      <ul>
+        <li>Dice Score: <strong>0.921 ± 0.047</strong></li>
+        <li>Mean Chamfer Distance: <strong>2.639 mm</strong></li>
+        <li>Successful processing of <strong>21/21 wound cases</strong></li>
+        <li><strong>23.3% reduction</strong> in bio-ink consumption compared with conventional rectangular patches</li>
+      </ul>
+
+      <p>
+        <em>Accepted for presentation and publication at BME11.</em>
+      </p>
+    </div>
+
+  </div>
+</section>
+<!-- EXPERIENCE -->
+<section id="experience" class="resume section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Experience</h2>
+    </div>
+
+    <!-- AI RESEARCH ASSISTANT -->
+    <div class="resume-item mb-5">
+      <h4>AI Research Assistant</h4>
+      <h5>Jan 2025 – Present</h5>
+      <p>
+        <em>
+          AI Lab – School of Computer Science & Engineering,
+          International University (VNU-HCMC)
+        </em>
+      </p>
+
+      <p>
+        Conduct research at the intersection of Healthcare AI,
+        Physiological Signal Processing, Computer Vision, and Edge AI.
+        My work focuses on developing machine learning systems that transform
+        biomedical data into practical tools for diagnosis, monitoring,
+        and clinical decision support.
+      </p>
+
+      <ul>
+        <li>
+          Developed deep learning pipelines for stress recognition from respiratory physiological signals collected using wearable sensing devices.
+        </li>
+
+        <li>
+          Designed CNN-LSTM architectures for temporal modeling of physiological time-series data and subject-independent stress classification.
+        </li>
+
+        <li>
+          Investigated Double Deep Q-Network (DDQN) based active learning strategies to improve data efficiency and reduce annotation requirements.
+        </li>
+
+        <li>
+          Built end-to-end preprocessing, training, and evaluation pipelines using LOSO (Leave-One-Subject-Out) validation for real-world generalization assessment.
+        </li>
+
+        <li>
+          Contributed to computer vision research involving wound segmentation, 3D reconstruction, and patient-specific bio-printable patch generation.
+        </li>
+
+        <li>
+          Explored Edge AI deployment workflows for healthcare applications involving embedded and wearable sensing systems.
+        </li>
+
+        <li>
+          Participated in experiment design, result interpretation, scientific writing, and publication preparation.
+        </li>
+      </ul>
+
+      <p>
+        <strong>Research Outcomes:</strong>
+      </p>
+
+      <ul>
+        <li>
+          Published a peer-reviewed research paper presenting a hybrid CNN-LSTM + DDQN framework achieving
+          <strong>95.1% stress recognition accuracy</strong>.
+        </li>
+
+        <li>
+          Currently extending the stress recognition framework toward a
+          <strong>Q1 journal publication</strong>,
+          focusing on improved robustness and cross-subject generalization.
+        </li>
+
+        <li>
+          Developing an <strong>Edge AI-based asthma detection system</strong>
+          using respiratory sensing signals for real-time monitoring on resource-constrained devices.
+        </li>
+
+        <li>
+          Contributed to an automated 3D wound reconstruction and bio-printable patch generation project
+          <strong>accepted at an international conference</strong>.
+        </li>
+      </ul>
+    </div>
+
+    <!-- BACKEND INTERN -->
+    <div class="resume-item">
+      <h4>Backend Developer Intern</h4>
+      <h5>Oct 2024 – Jan 2025</h5>
+
+      <p>
+        <em>
+          Vitalify Asia Co., Ltd. – Ho Chi Minh City, Vietnam
+        </em>
+      </p>
+
+      <p>
+        Contributed to backend development for production applications,
+        gaining hands-on experience in API development, authentication,
+        cloud deployment, and software engineering workflows.
+      </p>
+
+      <ul>
+        <li>
+          Developed backend services using NestJS and TypeORM.
+        </li>
+
+        <li>
+          Designed and implemented JWT-based authentication and authorization systems.
+        </li>
+
+        <li>
+          Integrated third-party APIs for media processing and business workflows.
+        </li>
+
+        <li>
+          Containerized services using Docker and participated in AWS deployment pipelines.
+        </li>
+
+        <li>
+          Collaborated with frontend developers and senior engineers to deliver production features and improve system reliability.
+        </li>
+      </ul>
+
+      <p>
+        <strong>Outcome:</strong>
+        Built production-ready backend services while gaining practical experience in cloud deployment,
+        API architecture, authentication systems, and scalable software engineering practices.
+      </p>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- SKILLS -->
-<section id="skills" class="skills section-bg">
+<section id="skills" class="skills">
   <div class="container" data-aos="fade-up">
 
     <div class="section-title">
@@ -76,12 +355,19 @@
     </div>
 
     <ul>
-      <li><strong>Programming:</strong> Python, SQL</li>
-      <li><strong>ML/DL:</strong> TensorFlow, PyTorch, Scikit-learn, CNN, LSTM</li>
-      <li><strong>Data:</strong> NumPy, Pandas, ETL pipelines</li>
-      <li><strong>Computer Vision:</strong> OpenCV, segmentation</li>
-      <li><strong>GenAI:</strong> LangChain, RAG, FAISS</li>
-      <li><strong>Cloud:</strong> AWS, Docker</li>
+    <li><strong>Languages:</strong> Python, SQL, C++</li>
+
+    <li><strong>Machine Learning:</strong> PyTorch, TensorFlow, Scikit-learn</li>
+
+    <li><strong>Computer Vision:</strong> OpenCV, U-Net, Image Segmentation, SfM, COLMAP, 3D Reconstruction</li>
+
+    <li><strong>Deep Learning:</strong> CNN, LSTM, Transfer Learning, Reinforcement Learning (DDQN)</li>
+
+    <li><strong>LLM & GenAI:</strong> LangChain, RAG, FAISS, Vector Search</li>
+
+    <li><strong>Deployment:</strong> Docker, AWS, REST APIs</li>
+
+    <li><strong>Data:</strong> Pandas, NumPy, ETL Pipelines</li>
     </ul>
 
   </div>
@@ -97,6 +383,7 @@
 
     <div class="row">
 
+      <!-- PROJECT 1 -->
       <div class="col-lg-4 col-md-6 portfolio-item">
         <div class="portfolio-wrap">
           <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid">
@@ -107,29 +394,16 @@
         <div class="portfolio-info">
           <h4>Stress Recognition from Wearable Signals</h4>
           <p>
-          <strong>95.1% Accuracy</strong> • CNN-LSTM + DDQN + Active Learning <br>
-          Published research (<a href="https://www.scopus.com/inward/record.url?eid=2-s2.0-105027208888&partnerID=MN8TOARS" target="_blank">Scopus</a> & <a href="https://link.springer.com/chapter/10.1007/978-3-032-00972-2_24" target="_blank">Springer</a>)
-        
+            <em>Problem:</em> Stress is a leading driver of burnout and chronic illness, but existing detection tools are either clinical or unreliable in real-world conditions.<br><br>
+            <em>Solution:</em> Built a CNN-LSTM pipeline combining reinforcement learning (DDQN) and active learning to classify stress from physiological wearable data — achieving <strong>95.1% accuracy</strong> with strong cross-subject generalization.<br><br>
+            <em>Published in</em> <a href="https://www.scopus.com/inward/record.url?eid=2-s2.0-105027208888&partnerID=MN8TOARS" target="_blank">Scopus</a> &amp; <a href="https://link.springer.com/chapter/10.1007/978-3-032-00972-2_24" target="_blank">Springer</a><br><br>
+            
+            Stack: Python · PyTorch · COLMAP · Open3D · Trimesh · OpenCV
           </p>
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid">
-          <div class="portfolio-links">
-            <a href="portfolio-details.html"><i class="bx bx-link"></i></a>
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <h4>QA Bot (LLM)</h4>
-          <p>
-          Retrieval-Augmented QA using IBM Watson <br>
-          Semantic search & context-aware answering
-          </p>
-        </div>
-      </div>
-
+      <!-- PROJECT 2 -->
       <div class="col-lg-4 col-md-6 portfolio-item">
         <div class="portfolio-wrap">
           <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid">
@@ -138,10 +412,31 @@
           </div>
         </div>
         <div class="portfolio-info">
-          <h4>2D-to-3D Wound Reconstruction</h4>
+          <h4>Automated Bio-Printable Wound Patch Generation</h4>
           <p>
-          Medical image segmentation & 3D reconstruction <br>
-          Computer Vision research (in progress)
+            <em>Solution:</em> 4-stage automated pipeline — OBB-guided cropping → U-Net segmentation (Dice 0.921) → COLMAP dense reconstruction (CD 2.639 mm) → conformal STL patch generation. Achieves <strong>23.3% bio-ink savings</strong> vs standard rectangular patches, watertight solids for 21/21 cases.<br><br>
+
+            <em>Publication:</em> Research paper accepted for international conference publication.<br><br>
+
+            Stack: PyTorch · COLMAP · EfficientNet-B4 · trimesh
+          </p>
+        </div>
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="col-lg-4 col-md-6 portfolio-item">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid">
+          <div class="portfolio-links">
+            <a href="portfolio-details.html"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h4>Document QA System (RAG)</h4>
+          <p>
+            <em>Problem:</em> Large document collections are difficult to query precisely — keyword search misses context, manual review is slow.<br><br>
+            <em>Solution:</em> Built a retrieval-augmented QA system using IBM Watson and semantic vector search, enabling context-aware answers over unstructured document sets.<br><br>
+            Demonstrates end-to-end LLM system design beyond prompt engineering.
           </p>
         </div>
       </div>
@@ -161,7 +456,8 @@
 
     <p>Ho Chi Minh City, Vietnam</p>
     <p>Email: hdt.tran24100@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/DSTai">github.com/DSTai</a></p>
+    <p>GitHub: <a href="https://github.com/DSTai" target="_blank">github.com/DSTai</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/thdtai/" target="_blank">linkedin.com/in/thdtai</a></p>
 
   </div>
 </section>
@@ -174,7 +470,7 @@
 
 <script>
   new Typed('.typed', {
-    strings: ["AI Engineer", "Machine Learning Engineer", "Computer Vision Enthusiast"],
+    strings: ["AI for Healthcare", "Deep Learning Systems", "Computer Vision Pipelines"],
     typeSpeed: 100,
     backSpeed: 50,
     loop: true
