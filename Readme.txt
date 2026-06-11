@@ -1,4 +1,4 @@
-My website: https://dstai.github.io/thdtai.github.io
+My website: https://dstai.github.io/portfolio-thdtai/
 
 Thanks for downloading this template!
 
