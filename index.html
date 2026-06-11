@@ -12,11 +12,14 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
+<!-- Progress Bar -->
+<div id="progress-bar"></div>
 
 <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
@@ -72,12 +75,12 @@
   <div class="hero-container" data-aos="fade-in">
     <h1>Tran Huynh Duc Tai</h1>
     <p>
-      <span class="typed"
+      AI Researcher focused on <span class="typed"
         data-typed-items="
-          AI Engineer,
           Healthcare AI,
           Computer Vision,
-          Machine Learning Research">
+          Machine Learning,
+          Edge AI">
       </span>
     </p>
   </div>
@@ -402,11 +405,20 @@
         <div class="portfolio-info">
           <h4>Stress Recognition from Wearable Signals</h4>
           <p>
-            <em>Problem:</em> Stress is a leading driver of burnout and chronic illness, but existing detection tools are either clinical or unreliable in real-world conditions.<br><br>
-            <em>Solution:</em> Developed a CNN-LSTM framework combined with Double Deep Q-Networks (DDQN) and Active Learning for stress recognition from wearable physiological signals. Evaluated using Leave-One-Subject-Out (LOSO) validation and achieved <strong>95.1% accuracy</strong> with strong cross-subject generalization.<br><br>
+            <em><strong>Problem:</strong></em> Stress is a leading driver of burnout and chronic illness, but existing detection tools are either clinical or unreliable in real-world conditions.<br><br>
+            <em><strong>Solution:</strong></em> Developed a CNN-LSTM framework combined with Double Deep Q-Networks (DDQN) and Active Learning for stress recognition from wearable physiological signals. Evaluated using Leave-One-Subject-Out (LOSO) validation and achieved <strong>95.1% accuracy</strong> with strong cross-subject generalization.<br><br>
             <em>Published in</em> <a href="https://www.scopus.com/inward/record.url?eid=2-s2.0-105027208888&partnerID=MN8TOARS" target="_blank">Scopus</a> &amp; <a href="https://link.springer.com/chapter/10.1007/978-3-032-00972-2_24" target="_blank">Springer</a><br><br>
             
-            Stack: Python · TensorFlow · Keras · CNN-LSTM · DDQN · Active Learning · NumPy · SciPy
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>TensorFlow</span>
+              <span>Keras</span>
+              <span>CNN-LSTM</span>
+              <span>DDQN</span>
+              <span>Active Learning</span>
+              <span>NumPy</span>
+              <span>SciPy</span>
+            </div>
           </p>
         </div>
       </div>
@@ -414,7 +426,7 @@
       <!-- PROJECT 2 -->
       <div class="col-lg-4 col-md-6 portfolio-item">
         <div class="portfolio-wrap">
-          <img src="assets/img/projects/project-3.jpg" class="img-fluid">
+          <img src="assets/img/projects/project-2.jpg" class="img-fluid">
           <div class="portfolio-links">
             <a href="project-details.html"><i class="bx bx-link"></i></a>
           </div>
@@ -422,11 +434,19 @@
         <div class="portfolio-info">
           <h4>Automated Bio-Printable Wound Patch Generation</h4>
           <p>
-            <em>Solution:</em> 4-stage automated pipeline — OBB-guided cropping → U-Net segmentation (Dice 0.921) → COLMAP dense reconstruction (CD 2.639 mm) → conformal STL patch generation. Achieves <strong>23.3% bio-ink savings</strong> vs standard rectangular patches, watertight solids for 21/21 cases.<br><br>
+            <em><strong>Problem:</strong></em> Manual or semi-automated wound patch design from 3D wound surfaces is time-consuming, inconsistent, and often results in inefficient material usage and non-conformal patches that do not properly fit complex wound geometries.<br><br>
+            <em><strong>Solution:</strong></em> 4-stage automated pipeline — OBB-guided cropping → U-Net segmentation (Dice 0.921) → COLMAP dense reconstruction (CD 2.639 mm) → conformal STL patch generation. Achieves <strong>23.3% bio-ink savings</strong> vs standard rectangular patches, watertight solids for 21/21 cases.<br><br>
 
             <em>Publication:</em> Accepted at the 11th International Conference on Biomedical Engineering in Vietnam (BME11).<br><br>
 
-            Stack: Python · PyTorch · COLMAP · Open3D · Trimesh · EfficientNet-B4
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>PyTorch</span>
+              <span>COLMAP</span>
+              <span>Open3D</span>
+              <span>Trimesh</span>
+              <span>EfficientNet-B4</span>
+            </div>
           </p>
         </div>
       </div>
@@ -434,7 +454,7 @@
 <!-- PROJECT 3 -->
       <div class="col-lg-4 col-md-6 portfolio-item">
         <div class="portfolio-wrap">
-          <img src="assets/img/projects/project-2.jpg" class="img-fluid">
+          <img src="assets/img/projects/project-3.jpg" class="img-fluid">
           <div class="portfolio-links">
             <a href="project-details.html"><i class="bx bx-link"></i></a>
           </div>
@@ -444,13 +464,22 @@
           <h4>Medical Research Assistant (RAG)</h4>
 
           <p>
-            <em>Problem:</em> Retrieving relevant information from hundreds of medical research papers is difficult using traditional keyword-based search.<br><br>
+            <em><strong>Problem:</strong></em> Retrieving relevant information from hundreds of medical research papers is difficult using traditional keyword-based search.<br><br>
 
-            <em>Solution:</em> Developed an end-to-end Retrieval-Augmented Generation pipeline using LangChain, FAISS, Cross-Encoder reranking, and Gemini LLM to provide context-aware answers grounded in scientific literature.<br><br>
+            <em><strong>Solution:</strong></em> Developed an end-to-end Retrieval-Augmented Generation pipeline using LangChain, FAISS, Cross-Encoder reranking, and Gemini LLM to provide context-aware answers grounded in scientific literature.<br><br>
 
             Supports multi-document retrieval, semantic search, source attribution, and real-time question answering through a Streamlit web application.<br><br>
 
-            Stack: Python · LangChain · FAISS · Hugging Face Transformers · Sentence Transformers · Cross-Encoder Reranker · Gemini API · Streamlit
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>LangChain</span>
+              <span>FAISS</span>
+              <span>Hugging Face Transformers</span>
+              <span>Sentence Transformers</span>
+              <span>Cross-Encoder Reranker</span>
+              <span>Gemini API</span>
+              <span>Streamlit</span>
+            </div>
           </p>
 
         </div>
@@ -469,10 +498,45 @@
       <h2>Contact</h2>
     </div>
 
-    <p>Ho Chi Minh City, Vietnam</p>
-    <p>Email: hdt.tran24100@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/DSTai" target="_blank">github.com/DSTai</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/thdtai/" target="_blank">linkedin.com/in/thdtai</a></p>
+    <div class="contact-card">
+
+      <div class="contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Ho Chi Minh City, Vietnam</span>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:hdt.tran24100@gmail.com">
+          hdt.tran24100@gmail.com
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-brands fa-github"></i>
+        <a href="https://github.com/DSTai" target="_blank">
+          GitHub Profile
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-brands fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/thdtai/" target="_blank">
+          LinkedIn Profile
+        </a>
+      </div>
+
+      <div class="contact-buttons">
+        <a class="btn-contact" href="mailto:hdt.tran24100@gmail.com">
+          <i class="fa-solid fa-paper-plane"></i> Email Me
+        </a>
+
+        <a class="btn-contact outline" href="https://github.com/DSTai" target="_blank">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
+
+    </div>
 
   </div>
 </section>
@@ -496,6 +560,8 @@
 <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 
 <script src="assets/js/main.js"></script>
-
+<a href="#" class="back-to-top">
+  <i class="bi bi-arrow-up-short"></i>
+</a>
 </body>
 </html>

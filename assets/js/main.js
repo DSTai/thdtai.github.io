@@ -261,3 +261,35 @@
   new PureCounter();
 
 })()
+
+/* Scroll Progress Bar */
+window.addEventListener("scroll", function () {
+  let winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+
+  document.getElementById("progress-bar").style.width = scrolled + "%";
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const backtotop = document.querySelector(".back-to-top");
+
+  if (!backtotop) return;
+
+  const toggle = () => {
+    if (window.scrollY > 100) {
+      backtotop.classList.add("active");
+    } else {
+      backtotop.classList.remove("active");
+    }
+  };
+
+  window.addEventListener("scroll", toggle);
+  window.addEventListener("load", toggle);
+
+  backtotop.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});

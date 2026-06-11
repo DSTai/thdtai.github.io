@@ -6,136 +6,19 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Project Details - Tran Huynh Duc Tai</title>
 
+  <!-- Vendor CSS -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <style>
-    .project-label {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 20px;
-      margin-bottom: 6px;
-    }
-    .label-problem  { background: rgba(245,101,101,0.12); color: #fc8181; border: 1px solid rgba(245,101,101,0.3); }
-    .label-approach { background: rgba(99,179,237,0.12);  color: #63b3ed; border: 1px solid rgba(99,179,237,0.3);  }
-    .label-result   { background: rgba(104,211,145,0.12); color: #68d391; border: 1px solid rgba(104,211,145,0.3); }
-    .label-status   { background: rgba(246,173,85,0.12);  color: #f6ad55; border: 1px solid rgba(246,173,85,0.3);  }
-
-    .project-block { margin-bottom: 20px; }
-    .project-block p  { margin-bottom: 0; font-size: 14px; line-height: 1.7; }
-    .project-block ul { font-size: 14px; line-height: 1.8; margin-bottom: 0; padding-left: 18px; }
-
-    .stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin: 12px 0; }
-    .stat-chip {
-      background: rgba(104,211,145,0.1);
-      border: 1px solid rgba(104,211,145,0.25);
-      border-radius: 8px; padding: 6px 14px;
-      font-size: 13px; font-weight: 600; color: #68d391;
-    }
-
-    /* Demo Modal */
-    .demo-modal-overlay {
-      display: none; position: fixed; inset: 0;
-      background: rgba(10,10,20,0.82); backdrop-filter: blur(6px);
-      z-index: 9999; align-items: center; justify-content: center;
-    }
-    .demo-modal-overlay.active { display: flex; }
-    .demo-modal {
-      background: #0f1117; border: 1px solid rgba(99,179,237,0.25);
-      border-radius: 16px; width: min(96vw, 1200px); max-height: 95vh;
-      display: flex; flex-direction: column;
-      box-shadow: 0 0 60px rgba(99,179,237,0.12), 0 24px 64px rgba(0,0,0,0.6);
-      overflow: hidden; animation: modalIn 0.35s cubic-bezier(0.22,1,0.36,1);
-    }
-    @keyframes modalIn {
-      from { opacity: 0; transform: translateY(28px) scale(0.97); }
-      to   { opacity: 1; transform: translateY(0) scale(1); }
-    }
-    .demo-modal-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 24px; border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: linear-gradient(135deg, #0d1b2a 0%, #1a2744 100%); flex-shrink: 0;
-    }
-    .demo-modal-header .modal-title-group { display: flex; align-items: center; gap: 12px; }
-    .demo-badge {
-      background: linear-gradient(135deg, #63b3ed, #4299e1); color: #fff;
-      font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-      padding: 3px 10px; border-radius: 20px;
-    }
-    .demo-modal-header h5 {
-      margin: 0; font-size: 15px; font-weight: 600;
-      color: #e2e8f0; font-family: 'Courier New', monospace;
-    }
-    .demo-modal-header .accuracy-chip {
-      font-size: 12px; color: #68d391; background: rgba(104,211,145,0.12);
-      border: 1px solid rgba(104,211,145,0.3); border-radius: 20px; padding: 2px 10px; font-weight: 600;
-    }
-    .demo-close-btn {
-      width: 32px; height: 32px; border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.06);
-      color: #a0aec0; cursor: pointer; display: flex; align-items: center;
-      justify-content: center; font-size: 18px; line-height: 1; transition: all 0.2s;
-    }
-    .demo-close-btn:hover { background: rgba(245,101,101,0.2); border-color: rgba(245,101,101,0.4); color: #fc8181; }
-    .demo-modal-body { flex: 1; overflow: hidden; position: relative; min-height: 560px; }
-    .demo-iframe-loader {
-      position: absolute; inset: 0; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 16px;
-      background: #0f1117; z-index: 2; transition: opacity 0.4s;
-    }
-    .demo-iframe-loader.hidden { opacity: 0; pointer-events: none; }
-    .loader-spinner {
-      width: 44px; height: 44px; border: 3px solid rgba(99,179,237,0.15);
-      border-top-color: #63b3ed; border-radius: 50%; animation: spin 0.9s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .loader-text { color: #718096; font-size: 13px; font-family: 'Courier New', monospace; letter-spacing: 0.5px; }
-    .demo-modal-body iframe {
-      width: 100%; height: 100%; min-height: 560px;
-      border: none; display: block; position: relative; z-index: 1;
-    }
-    .demo-modal-footer {
-      padding: 12px 24px; border-top: 1px solid rgba(255,255,255,0.06);
-      background: #0a0d14; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
-    }
-    .demo-modal-footer .footer-note { font-size: 11px; color: #4a5568; font-family: 'Courier New', monospace; }
-    .demo-modal-footer .open-hf-btn {
-      font-size: 12px; color: #63b3ed; text-decoration: none;
-      display: flex; align-items: center; gap: 6px; transition: color 0.2s;
-    }
-    .demo-modal-footer .open-hf-btn:hover { color: #90cdf4; }
-    .demo-modal-footer .open-hf-btn svg { width: 14px; height: 14px; }
-
-    .btn-demo {
-      display: inline-flex; align-items: center; gap: 8px; padding: 9px 20px;
-      background: linear-gradient(135deg, #2b6cb0, #3182ce); color: #fff;
-      border: none; border-radius: 8px; font-size: 13px; font-weight: 600;
-      letter-spacing: 0.3px; cursor: pointer; text-decoration: none; transition: all 0.2s;
-      box-shadow: 0 4px 14px rgba(49,130,206,0.35);
-    }
-    .btn-demo:hover {
-      background: linear-gradient(135deg, #2c5282, #2b6cb0);
-      box-shadow: 0 6px 20px rgba(49,130,206,0.5); transform: translateY(-1px); color: #fff;
-    }
-    .btn-demo svg { width: 15px; height: 15px; flex-shrink: 0; }
-    .live-dot {
-      width: 8px; height: 8px; background: #68d391; border-radius: 50%;
-      display: inline-block; animation: pulse-dot 1.8s ease-in-out infinite; flex-shrink: 0;
-    }
-    @keyframes pulse-dot {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50%       { transform: scale(1.5); opacity: 0.6; }
-    }
-  </style>
 </head>
 
 <body>
-
+<div id="progress-bar"></div>
 <!-- DEMO Project 1 -->
 <div class="demo-modal-overlay" id="demoModalOverlay">
   <div class="demo-modal" id="demoModal">
@@ -271,7 +154,7 @@
       <div class="col-md-5 mb-3 mb-md-0 text-center">
         <img src="assets/img/wound.svg"
              class="img-fluid rounded shadow-sm"
-             style="max-height:400px; object-fit:contain;">
+             style="max-height:700px; object-fit:contain;">
 
         <p class="mt-2 text-muted" style="font-size:13px;">
           <em>Multi-view RGB images → Segmentation → 3D reconstruction → Bioprintable patch</em>
@@ -608,7 +491,23 @@
 </div>
 
 <!-- JS -->
+ <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
 <script src="assets/vendor/aos/aos.js"></script>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+<script src="assets/vendor/typed.js/typed.umd.js"></script>
+
+<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+<script src="assets/js/main.js"></script>
 <script>
   AOS.init({ duration: 800, once: true });
 
@@ -686,5 +585,8 @@ if (ragOpenBtn) {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDemo(); });
 </script>
 
+<a href="#" class="back-to-top">
+  <i class="bi bi-arrow-up-short"></i>
+</a>
 </body>
 </html>
