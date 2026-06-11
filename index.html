@@ -91,9 +91,17 @@
     <div class="section-title">
       <h2>About</h2>
       <p>
-       I'm an AI Engineer focused on <strong>Healthcare AI</strong> and <strong>Computer Vision</strong>.
-        My work spans physiological signal processing, medical image analysis, 3D reconstruction, and retrieval-augmented AI systems. I enjoy building end-to-end solutions that combine machine learning research with practical deployment, transforming raw clinical data into actionable insights.
-        My long-term interest lies in building AI-powered healthcare systems that can operate reliably outside laboratory environments, enabling real-world clinical impact.
+        I am a Data Science graduate and AI Engineer focused on <strong>Healthcare AI</strong>,
+        <strong>Computer Vision</strong>, <strong>Edge AI</strong>, and <strong>Generative AI</strong>.
+
+        My experience spans physiological signal analysis,
+        medical image segmentation, 3D reconstruction,
+        reinforcement learning, retrieval-augmented generation,
+        and deployment of AI-powered applications.
+
+        I have authored research publications in healthcare AI
+        and enjoy building end-to-end systems that transform
+        research ideas into practical solutions.
       </p>
     </div>
   </div>
@@ -359,15 +367,15 @@
 
     <li><strong>Machine Learning:</strong> PyTorch, TensorFlow, Scikit-learn</li>
 
-    <li><strong>Computer Vision:</strong> OpenCV, U-Net, Image Segmentation, SfM, COLMAP, 3D Reconstruction</li>
+    <li><strong>Deep Learning:</strong> CNN, LSTM, Transfer Learning, Reinforcement Learning (DDQN), Active Learning</li>
 
-    <li><strong>Deep Learning:</strong> CNN, LSTM, Transfer Learning, Reinforcement Learning (DDQN)</li>
+    <li><strong>Computer Vision:</strong>  OpenCV, U-Net, EfficientNet, Image Segmentation, Structure-from-Motion (SfM), COLMAP, 3D Reconstruction, Open3D</li>
 
-    <li><strong>LLM & GenAI:</strong> LangChain, RAG, FAISS, Vector Search</li>
+    <li><strong>LLM & Generative AI:</strong> LangChain, Retrieval-Augmented Generation (RAG), FAISS, Cross-Encoder Reranking, Vector Search, Prompt Engineering</li>
 
-    <li><strong>Deployment:</strong> Docker, AWS, REST APIs</li>
+    <li><strong>Deployment & MLOps:</strong> Docker, Streamlit, REST APIs, AWS (basic), Hugging Face Spaces, Git, Linux</li>
 
-    <li><strong>Data:</strong> Pandas, NumPy, ETL Pipelines</li>
+    <li><strong>Data:</strong> Pandas, NumPy, SciPy, ETL Pipelines</li>
     </ul>
 
   </div>
@@ -395,10 +403,10 @@
           <h4>Stress Recognition from Wearable Signals</h4>
           <p>
             <em>Problem:</em> Stress is a leading driver of burnout and chronic illness, but existing detection tools are either clinical or unreliable in real-world conditions.<br><br>
-            <em>Solution:</em> Built a CNN-LSTM pipeline combining reinforcement learning (DDQN) and active learning to classify stress from physiological wearable data — achieving <strong>95.1% accuracy</strong> with strong cross-subject generalization.<br><br>
+            <em>Solution:</em> Developed a CNN-LSTM framework combined with Double Deep Q-Networks (DDQN) and Active Learning for stress recognition from wearable physiological signals. Evaluated using Leave-One-Subject-Out (LOSO) validation and achieved <strong>95.1% accuracy</strong> with strong cross-subject generalization.<br><br>
             <em>Published in</em> <a href="https://www.scopus.com/inward/record.url?eid=2-s2.0-105027208888&partnerID=MN8TOARS" target="_blank">Scopus</a> &amp; <a href="https://link.springer.com/chapter/10.1007/978-3-032-00972-2_24" target="_blank">Springer</a><br><br>
             
-            Stack: Python · PyTorch · COLMAP · Open3D · Trimesh · OpenCV
+            Stack: Python · TensorFlow · Keras · CNN-LSTM · DDQN · Active Learning · NumPy · SciPy
           </p>
         </div>
       </div>
@@ -416,9 +424,9 @@
           <p>
             <em>Solution:</em> 4-stage automated pipeline — OBB-guided cropping → U-Net segmentation (Dice 0.921) → COLMAP dense reconstruction (CD 2.639 mm) → conformal STL patch generation. Achieves <strong>23.3% bio-ink savings</strong> vs standard rectangular patches, watertight solids for 21/21 cases.<br><br>
 
-            <em>Publication:</em> Research paper accepted for international conference publication.<br><br>
+            <em>Publication:</em> Accepted at the 11th International Conference on Biomedical Engineering in Vietnam (BME11).<br><br>
 
-            Stack: PyTorch · COLMAP · EfficientNet-B4 · trimesh
+            Stack: Python · PyTorch · COLMAP · Open3D · Trimesh · EfficientNet-B4
           </p>
         </div>
       </div>
@@ -474,7 +482,7 @@
 <script src="assets/vendor/typed.js/typed.umd.js"></script>
 <script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+<script src="assets/js/main.js"></script>
 <script>
   new Typed('.typed', {
     strings: ["AI for Healthcare", "Deep Learning Systems", "Computer Vision Pipelines"],
