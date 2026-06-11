@@ -8,7 +8,7 @@
             "type": "editor-browser",
             "request": "launch",
             "name": "Open index.html",
-            "url": "file:///d%3A/Documents/Downloads/thdtai.github.io/index.html"
+            "url": "file:///d%3A/github-repos/thdtai.github.io/index.html"
         }
     ]
 }
