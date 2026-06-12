@@ -293,3 +293,89 @@ document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
+
+  AOS.init({ duration: 800, once: true });
+
+  const HF_URL  = "https://hdtai24-stress-prediction-app.hf.space";
+  const overlay = document.getElementById('demoModalOverlay');
+  const openBtn = document.getElementById('openDemoBtn');
+  const closeBtn= document.getElementById('demoCloseBtn');
+  const iframe  = document.getElementById('demoIframe');
+  const loader  = document.getElementById('iframeLoader');
+
+  const ragOpenBtn = document.getElementById("openRagDemoBtn");
+  const ragModalOverlay = document.getElementById("ragDemoModalOverlay");
+  const ragCloseBtn = document.getElementById("ragDemoCloseBtn");
+  const ragIframe = document.getElementById("ragDemoIframe");
+  const ragLoader = document.getElementById("ragIframeLoader");
+
+  function openDemo() {
+    if (!iframe.src || iframe.src === window.location.href) iframe.src = HF_URL;
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDemo() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (ragOpenBtn) {
+    ragOpenBtn.addEventListener("click", () => {
+      ragModalOverlay.classList.add("active");
+      ragLoader.style.display = "flex";
+      ragIframe.src = "https://hdtai24-medical-rag-assistant.hf.space";
+      ragIframe.onload = () => { ragLoader.style.display = "none"; };
+    });
+
+    ragCloseBtn.addEventListener("click", () => {
+      ragModalOverlay.classList.remove("active");
+      ragIframe.src = "";
+    });
+
+    ragModalOverlay.addEventListener("click", (e) => {
+      if (e.target === ragModalOverlay) {
+        ragModalOverlay.classList.remove("active");
+        ragIframe.src = "";
+      }
+    });
+  }
+
+  iframe.addEventListener('load', () => loader.classList.add('hidden'));
+  openBtn.addEventListener('click', openDemo);
+  closeBtn.addEventListener('click', closeDemo);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeDemo(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDemo(); });
+
+  /* ===== Timeline scrollspy ===== */
+  (function () {
+    const sections = document.querySelectorAll('[id^="project-"]');
+    const links = document.querySelectorAll('.timeline-link');
+
+    function onScroll() {
+      let current = sections[0]?.id;
+      const offset = window.innerHeight * 0.35;
+
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top - offset <= 0) {
+          current = section.id;
+        }
+        section.classList.toggle('in-view', rect.top - offset <= 0 && rect.bottom - offset > 0);
+      });
+
+      links.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+      });
+    }
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+  })();

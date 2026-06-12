@@ -19,6 +19,9 @@
 
 <body>
 <div id="progress-bar"></div>
+
+<i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
 <!-- DEMO Project 1 -->
 <div class="demo-modal-overlay" id="demoModalOverlay">
   <div class="demo-modal" id="demoModal">
@@ -54,12 +57,352 @@
   </div>
 </div>
 
+<!-- PROJECT 3 DEMO MODAL -->
+<div class="demo-modal-overlay" id="ragDemoModalOverlay">
+  <div class="demo-modal" id="ragDemoModal">
+    <div class="demo-modal-header">
+      <div class="modal-title-group">
+        <span class="demo-badge">Live Demo</span>
+        <h5>Medical Research Assistant</h5>
+        <span class="accuracy-chip">RAG + Gemini</span>
+      </div>
+      <button class="demo-close-btn" id="ragDemoCloseBtn" aria-label="Close">&#10005;</button>
+    </div>
+    <div class="demo-modal-body">
+      <div class="demo-iframe-loader" id="ragIframeLoader">
+        <div class="loader-spinner"></div>
+        <span class="loader-text">Loading Hugging Face Space...</span>
+      </div>
+      <iframe id="ragDemoIframe" title="Medical Research Assistant Demo"
+        allow="clipboard-write" loading="lazy"></iframe>
+    </div>
+    <div class="demo-modal-footer">
+      <span class="footer-note">Powered by Hugging Face Spaces · Gemini · FAISS · LangChain</span>
+      <a href="https://huggingface.co/spaces/hdtai24/medical-rag-assistant"
+         target="_blank" rel="noopener noreferrer" class="open-hf-btn">
+        Open in full page
+      </a>
+    </div>
+  </div>
+</div>
 
+<!-- ===== SIDEBAR HEADER (same layout as index, nav = project timeline) ===== -->
+<header id="header">
+  <div class="d-flex flex-column">
+
+    <div class="profile text-center">
+      <img src="assets/img/profile-1.jpg"
+           alt="Tran Huynh Duc Tai"
+           class="img-fluid rounded-circle profile-img">
+
+      <h1 class="text-light">Tran Huynh Duc Tai</h1>
+
+      <div class="social-links mt-3">
+        <a href="https://github.com/DSTai" target="_blank">
+          <i class="bx bxl-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/thdtai/" target="_blank">
+          <i class="bx bxl-linkedin"></i>
+        </a>
+      </div>
+
+      <div class="mt-3">
+        <a href="index.html" class="download-cv-btn back-home-btn">
+          <i class="bx bx-arrow-back"></i>
+          Back to Home
+        </a>
+      </div>
+    </div>
+
+    <!-- TIMELINE NAV -->
+    <nav id="project-timeline" class="nav-menu navbar">
+      <ul class="timeline-list">
+        <li>
+          <a href="#project-wound" class="timeline-link">
+            <span class="timeline-date">05/2026</span>
+            <span class="timeline-title">Automated Bio-Printable<br>Wound Patch Generation</span>
+          </a>
+        </li>
+        <li>
+          <a href="#project-rag" class="timeline-link">
+            <span class="timeline-date">11/2025</span>
+            <span class="timeline-title">Medical Research<br>Assistant (RAG)</span>
+          </a>
+        </li>
+                <li>
+          <a href="#project-stress" class="timeline-link active">
+            <span class="timeline-date">01/2025</span>
+            <span class="timeline-title">Stress Recognition<br>from Wearable Signals</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<main id="main">
 <div class="container mt-5">
+  <!-- PROJECT 2: WOUND -->
+  <div id="project-wound" data-aos="fade-up" class="mb-5">
+    <h2>Automated Bio-Printable Wound Patch Generation</h2>
 
-  <!-- PROJECT 1: STRESS -->
-  <div data-aos="fade-up" class="mb-5">
-    <h2>Human Stress Recognition using Deep Learning</h2>
+    <div class="card p-4 shadow-sm">
+      <div class="row align-items-start">
+
+        <div class="col-md-5 mb-3 mb-md-0 text-center">
+          <img src="assets/img/wound.svg"
+               class="img-fluid rounded shadow-sm"
+               style="max-height:700px; object-fit:contain;">
+
+          <p class="mt-2 text-muted" style="font-size:13px;">
+            <em>Multi-view RGB images → Segmentation → 3D reconstruction → Bioprintable patch</em>
+          </p>
+
+          <div class="stat-row justify-content-center mt-3">
+            <span class="stat-chip" style="color:#68d391;">Dice 0.921</span>
+            <span class="stat-chip" style="color:#63b3ed;">CD 2.64 mm</span>
+            <span class="stat-chip" style="color:#f6ad55;">23.3% Bio-ink Saving</span>
+            <span class="stat-chip" style="color:hwb(0 39% 7%);">BME11 Accepted</span>
+          </div>
+
+          <p class="mt-3" style="font-size:13px;">
+            <strong>Stack:</strong>
+            Python · PyTorch · COLMAP · Open3D · Trimesh · OpenCV · EfficientNet-B4
+          </p>
+          <p class="mt-3" style="font-size:13px;">
+            <strong>Links:</strong>
+            <a href="https://github.com/DSTai/Automated-Bio-Printable-Wound-Patch-Generation" target="_blank">GitHub</a> ·
+          </p>
+        </div>
+
+        <div class="col-md-7">
+
+          <div class="project-block">
+            <span class="project-label label-problem">Problem</span>
+            <p>
+              Personalized wound scaffolds require accurate 3D wound geometry,
+              yet current workflows often rely on manual CAD design,
+              flat-base patches, or specialized scanning hardware.
+              These approaches increase fabrication time,
+              reduce scaffold conformity,
+              and waste expensive bio-inks.
+            </p>
+          </div>
+
+          <div class="project-block">
+            <span class="project-label label-approach">Approach</span>
+            <p>
+              Developed an end-to-end pipeline that converts multi-view RGB wound images
+              into fabrication-ready 3D patch geometries.
+            </p>
+            <ul>
+              <li>
+                <strong>ROI localization</strong> using 3D oriented bounding box projections
+                to obtain wound-centric image crops while preserving camera geometry
+              </li>
+              <li>
+                <strong>Wound segmentation</strong> using
+                EfficientNet-B4 U-Net trained on Syn3DWound
+              </li>
+              <li>
+                <strong>3D reconstruction</strong> using COLMAP SfM and dense stereo,
+                combined with segmentation-guided mesh filtering
+                to isolate wound surfaces
+              </li>
+              <li>
+                <strong>Conformal patch generation</strong>
+                producing watertight STL models for extrusion-based bioprinting
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-block">
+            <span class="project-label label-result">Results</span>
+            <ul>
+              <li>
+                Achieved <strong>Dice = 0.921 ± 0.047</strong>
+                on 14 wound cases from the Syn3DWound benchmark
+              </li>
+              <li>
+                Reconstructed wound meshes with
+                <strong>2.639 mm mean Chamfer Distance</strong>
+                from ground truth geometry
+              </li>
+              <li>
+                Generated watertight printable patches for
+                <strong>21/21 reconstructed cases</strong>
+              </li>
+              <li>
+                Reduced estimated bio-ink usage by
+                <strong>23.3%</strong> compared with conventional flat-base patches
+              </li>
+              <li>
+                Accepted for publication at the 11th International Conference on Biomedical Engineering in Vietnam (BME11)
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-block">
+            <span class="project-label label-status">My Role</span>
+            <p>
+              Primary contributor responsible for wound segmentation model development,
+              3D reconstruction pipeline implementation,
+              STL patch generation,
+              experimental evaluation,
+              visualization development,
+              and contribution to conference paper preparation under faculty supervision.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <hr class="project-divider">
+
+  <!-- PROJECT 3: MEDICAL RESEARCH ASSISTANT -->
+  <div id="project-rag" data-aos="fade-up" class="mb-5">
+    <h2>Medical Research Assistant (RAG)</h2>
+
+    <div class="card p-4 shadow-sm">
+      <div class="row align-items-start flex-md-row-reverse">
+
+        <div class="col-md-5 mb-3 mb-md-0 text-center">
+          <img src="assets/img/qa.png"
+               class="img-fluid rounded shadow-sm"
+               style="max-height:400px; object-fit:contain;">
+
+          <p class="mt-2 text-muted" style="font-size:13px;">
+            <em>PDF ingestion → embeddings → FAISS retrieval → Cross-Encoder reranking → citation-aware answer generation</em>
+          </p>
+
+          <div class="stat-row justify-content-center mt-3">
+            <span class="stat-chip">Medical RAG</span>
+            <span class="stat-chip" style="color:#63b3ed;">FAISS</span>
+            <span class="stat-chip" style="color:hwb(0 39% 7%);">Cross Encoder</span>
+          </div>
+
+          <p class="mt-3" style="font-size:13px;">
+            <strong>Stack:</strong>
+            Python · LangChain · FAISS · Hugging Face Transformers · Sentence Transformers · Cross-Encoder Reranker · Gemini API · Streamlit
+          </p>
+
+          <p class="mt-3" style="font-size:13px;">
+            <strong>Links:</strong>
+            <a href="https://github.com/DSTai/medical-rag-assistant" target="_blank">GitHub</a>
+          </p>
+          <div class="mt-3">
+            <button class="btn-demo" id="openRagDemoBtn">
+              <span class="live-dot"></span>
+              <svg viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              Try Live Demo
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+
+          <div class="project-block">
+            <span class="project-label label-problem">Problem</span>
+            <p>
+              Medical researchers and clinicians frequently work with large collections of
+              scientific papers, clinical reports, and healthcare guidelines.
+              Traditional keyword search often fails to capture semantic meaning,
+              making evidence retrieval slow and inefficient.
+            </p>
+            <p>
+              The objective was to build an AI-powered assistant capable of
+              retrieving relevant biomedical evidence and generating grounded answers
+              directly from medical literature.
+            </p>
+          </div>
+
+          <div class="project-block">
+            <span class="project-label label-approach">Approach</span>
+            <p>
+              Implemented an end-to-end Retrieval-Augmented Generation (RAG) system:
+            </p>
+            <ul>
+              <li>
+                <strong>Multi-document PDF ingestion</strong> —
+                automatically processes collections of biomedical research papers.
+              </li>
+              <li>
+                <strong>Document chunking & semantic embeddings</strong> —
+                converts document sections into dense vector representations.
+              </li>
+              <li>
+                <strong>FAISS vector retrieval</strong> —
+                retrieves candidate passages relevant to user questions.
+              </li>
+              <li>
+                <strong>Cross-Encoder reranking</strong> —
+                reorders retrieved passages using transformer-based relevance scoring
+                to improve retrieval precision.
+              </li>
+              <li>
+                <strong>Grounded answer generation</strong> —
+                uses Gemini to generate answers strictly from retrieved evidence.
+              </li>
+              <li>
+                <strong>Citation-aware responses</strong> —
+                displays source papers and page references for answer verification.
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-block">
+            <span class="project-label label-result">Key Results</span>
+            <ul>
+              <li>
+                Built a complete biomedical literature question-answering platform
+                supporting multi-paper retrieval and evidence-based responses.
+              </li>
+              <li>
+                Improved retrieval quality through a two-stage retrieval pipeline
+                (FAISS retrieval + Cross-Encoder reranking).
+              </li>
+              <li>
+                Enabled users to trace answers back to source documents,
+                increasing transparency and reducing hallucination risk.
+              </li>
+              <li>
+                Demonstrated practical application of modern RAG architectures
+                for healthcare and scientific knowledge retrieval.
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-block">
+            <span class="project-label label-status">My Role</span>
+            <p>
+              Designed and implemented the complete system architecture,
+              including PDF ingestion, document preprocessing,
+              vector database construction, semantic retrieval,
+              reranking, prompt engineering, citation generation,
+              and Streamlit deployment.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+<hr class="project-divider">
+   <!-- PROJECT 1: STRESS -->
+  <div id="project-stress" data-aos="fade-up" class="mb-5">
+    <h2>Stress Recognition from Wearable Signals</h2>
     <div class="card p-4 shadow-sm">
       <div class="row align-items-start">
 
@@ -125,7 +468,6 @@
           </div>
           <div class="project-block">
             <span class="project-label label-status">My Role</span>
-
             <p>
               Primary contributor responsible for physiological signal preprocessing,
               CNN-LSTM architecture implementation,
@@ -141,449 +483,20 @@
     </div>
   </div>
 
-
-<!-- PROJECT 2: WOUND -->
-<div data-aos="fade-up" class="mb-5">
-  <h2>
-    Automated Bio-Printable Wound Patch Generation
-  </h2>
-
-  <div class="card p-4 shadow-sm">
-    <div class="row align-items-start">
-
-      <div class="col-md-5 mb-3 mb-md-0 text-center">
-        <img src="assets/img/wound.svg"
-             class="img-fluid rounded shadow-sm"
-             style="max-height:700px; object-fit:contain;">
-
-        <p class="mt-2 text-muted" style="font-size:13px;">
-          <em>Multi-view RGB images → Segmentation → 3D reconstruction → Bioprintable patch</em>
-        </p>
-
-        <div class="stat-row justify-content-center mt-3">
-          <span class="stat-chip" style="color:#68d391;">Dice 0.921</span>
-          <span class="stat-chip" style="color:#63b3ed;">CD 2.64 mm</span>
-          <span class="stat-chip" style="color:#f6ad55;">23.3% Bio-ink Saving</span>
-          <span class="stat-chip" style="color:hwb(0 39% 7%);">BME11 Accepted</span>
-        </div>
-
-        <p class="mt-3" style="font-size:13px;">
-          <strong>Stack:</strong>
-          Python · PyTorch · COLMAP · Open3D · Trimesh · OpenCV · EfficientNet-B4
-        </p>
-        <p class="mt-3" style="font-size:13px;">
-          <strong>Links:</strong>
-          <a href="https://github.com/DSTai/Automated-Bio-Printable-Wound-Patch-Generation" target="_blank">GitHub</a> ·
-        </p>
-      </div>
-
-      <div class="col-md-7">
-
-        <div class="project-block">
-          <span class="project-label label-problem">Problem</span>
-          <p>
-            Personalized wound scaffolds require accurate 3D wound geometry,
-            yet current workflows often rely on manual CAD design,
-            flat-base patches, or specialized scanning hardware.
-            These approaches increase fabrication time,
-            reduce scaffold conformity,
-            and waste expensive bio-inks.
-          </p>
-        </div>
-
-        <div class="project-block">
-          <span class="project-label label-approach">Approach</span>
-
-          <p>
-            Developed an end-to-end pipeline that converts multi-view RGB wound images
-            into fabrication-ready 3D patch geometries.
-          </p>
-
-          <ul>
-            <li>
-              <strong>ROI localization</strong> using 3D oriented bounding box projections
-              to obtain wound-centric image crops while preserving camera geometry
-            </li>
-
-            <li>
-              <strong>Wound segmentation</strong> using
-              EfficientNet-B4 U-Net trained on Syn3DWound
-            </li>
-
-            <li>
-              <strong>3D reconstruction</strong> using COLMAP SfM and dense stereo,
-              combined with segmentation-guided mesh filtering
-              to isolate wound surfaces
-            </li>
-
-            <li>
-              <strong>Conformal patch generation</strong>
-              producing watertight STL models for extrusion-based bioprinting
-            </li>
-          </ul>
-        </div>
-
-        <div class="project-block">
-          <span class="project-label label-result">Results</span>
-
-          <ul>
-            <li>
-              Achieved <strong>Dice = 0.921 ± 0.047</strong>
-              on 14 wound cases from the Syn3DWound benchmark
-            </li>
-
-            <li>
-              Reconstructed wound meshes with
-              <strong>2.639 mm mean Chamfer Distance</strong>
-              from ground truth geometry
-            </li>
-
-            <li>
-              Generated watertight printable patches for
-              <strong>21/21 reconstructed cases</strong>
-            </li>
-
-            <li>
-              Reduced estimated bio-ink usage by
-              <strong>23.3%</strong> compared with conventional flat-base patches
-            </li>
-            <li>
-            Accepted for publication at the 11th International Conference on Biomedical Engineering in Vietnam (BME11)
-            </li>
-          </ul>
-        </div>
-        <div class="project-block">
-          <span class="project-label label-status">My Role</span>
-
-          <p>
-            Primary contributor responsible for wound segmentation model development,
-            3D reconstruction pipeline implementation,
-            STL patch generation,
-            experimental evaluation,
-            visualization development,
-            and contribution to conference paper preparation under faculty supervision.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
 </div>
-
-<!-- PROJECT 3 DEMO MODAL -->
-<div class="demo-modal-overlay" id="ragDemoModalOverlay">
-
-  <div class="demo-modal" id="ragDemoModal">
-
-    <div class="demo-modal-header">
-
-      <div class="modal-title-group">
-        <span class="demo-badge">Live Demo</span>
-        <h5>Medical Research Assistant</h5>
-        <span class="accuracy-chip">RAG + Gemini</span>
-      </div>
-
-      <button
-        class="demo-close-btn"
-        id="ragDemoCloseBtn"
-        aria-label="Close">
-        &#10005;
-      </button>
-
-    </div>
-
-    <div class="demo-modal-body">
-
-      <div class="demo-iframe-loader"
-           id="ragIframeLoader">
-
-        <div class="loader-spinner"></div>
-
-        <span class="loader-text">
-          Loading Hugging Face Space...
-        </span>
-
-      </div>
-
-      <iframe
-        id="ragDemoIframe"
-        title="Medical Research Assistant Demo"
-        allow="clipboard-write"
-        loading="lazy">
-      </iframe>
-
-    </div>
-
-    <div class="demo-modal-footer">
-
-      <span class="footer-note">
-        Powered by Hugging Face Spaces · Gemini · FAISS · LangChain
-      </span>
-
-      <a href="https://huggingface.co/spaces/hdtai24/medical-rag-assistant"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="open-hf-btn">
-
-        Open in full page
-
-      </a>
-
-    </div>
-
-  </div>
-
-</div>
- <!-- PROJECT 3: MEDICAL RESEARCH ASSISTANT -->
-<div data-aos="fade-up" class="mb-5">
-  <h2>Medical Research Assistant (Advanced RAG for Biomedical Literature)</h2>
-
-  <div class="card p-4 shadow-sm">
-    <div class="row align-items-start flex-md-row-reverse">
-
-      <div class="col-md-5 mb-3 mb-md-0 text-center">
-        <img src="assets/img/qa.png"
-             class="img-fluid rounded shadow-sm"
-             style="max-height:400px; object-fit:contain;">
-
-        <p class="mt-2 text-muted" style="font-size:13px;">
-          <em>PDF ingestion → embeddings → FAISS retrieval → Cross-Encoder reranking → citation-aware answer generation</em>
-        </p>
-
-        <div class="stat-row justify-content-center mt-3">
-          <span class="stat-chip">Medical RAG</span>
-          <span class="stat-chip" style="color:#63b3ed;">FAISS</span>
-          <span class="stat-chip" style="color:hwb(0 39% 7%);">Cross Encoder</span>
-        </div>
-
-        <p class="mt-3" style="font-size:13px;">
-          <strong>Stack:</strong>
-          Python · LangChain · FAISS · Hugging Face Transformers · Sentence Transformers · Cross-Encoder Reranker · Gemini API · Streamlit
-        </p>
-
-        <p class="mt-3" style="font-size:13px;">
-          <strong>Links:</strong>
-          <a href="https://github.com/DSTai/medical-rag-assistant" target="_blank">GitHub</a>
-        </p>
-          <div class="mt-3">
-            <button class="btn-demo" id="openRagDemoBtn">
-              <span class="live-dot"></span>
-
-              <svg viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round">
-                <polygon points="5 3 19 12 5 21 5 3"/>
-              </svg>
-
-              Try Live Demo
-            </button>
-          </div>
-      </div>
-
-      <div class="col-md-7">
-
-        <div class="project-block">
-          <span class="project-label label-problem">Problem</span>
-
-          <p>
-            Medical researchers and clinicians frequently work with large collections of
-            scientific papers, clinical reports, and healthcare guidelines.
-            Traditional keyword search often fails to capture semantic meaning,
-            making evidence retrieval slow and inefficient.
-          </p>
-
-          <p>
-            The objective was to build an AI-powered assistant capable of
-            retrieving relevant biomedical evidence and generating grounded answers
-            directly from medical literature.
-          </p>
-        </div>
-
-        <div class="project-block">
-          <span class="project-label label-approach">Approach</span>
-
-          <p>
-            Implemented an end-to-end Retrieval-Augmented Generation (RAG) system:
-          </p>
-
-          <ul>
-            <li>
-              <strong>Multi-document PDF ingestion</strong> —
-              automatically processes collections of biomedical research papers.
-            </li>
-
-            <li>
-              <strong>Document chunking & semantic embeddings</strong> —
-              converts document sections into dense vector representations.
-            </li>
-
-            <li>
-              <strong>FAISS vector retrieval</strong> —
-              retrieves candidate passages relevant to user questions.
-            </li>
-
-            <li>
-              <strong>Cross-Encoder reranking</strong> —
-              reorders retrieved passages using transformer-based relevance scoring
-              to improve retrieval precision.
-            </li>
-
-            <li>
-              <strong>Grounded answer generation</strong> —
-              uses Gemini to generate answers strictly from retrieved evidence.
-            </li>
-
-            <li>
-              <strong>Citation-aware responses</strong> —
-              displays source papers and page references for answer verification.
-            </li>
-          </ul>
-        </div>
-
-        <div class="project-block">
-          <span class="project-label label-result">Key Results</span>
-
-          <ul>
-            <li>
-              Built a complete biomedical literature question-answering platform
-              supporting multi-paper retrieval and evidence-based responses.
-            </li>
-
-            <li>
-              Improved retrieval quality through a two-stage retrieval pipeline
-              (FAISS retrieval + Cross-Encoder reranking).
-            </li>
-
-            <li>
-              Enabled users to trace answers back to source documents,
-              increasing transparency and reducing hallucination risk.
-            </li>
-
-            <li>
-              Demonstrated practical application of modern RAG architectures
-              for healthcare and scientific knowledge retrieval.
-            </li>
-          </ul>
-        </div>
-
-        <div class="project-block">
-          <span class="project-label label-status">My Role</span>
-
-          <p>
-            Designed and implemented the complete system architecture,
-            including PDF ingestion, document preprocessing,
-            vector database construction, semantic retrieval,
-            reranking, prompt engineering, citation generation,
-            and Streamlit deployment.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</div>
-
-</div>
+</main>
 
 <!-- JS -->
- <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 <script src="assets/vendor/aos/aos.js"></script>
-
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-
 <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
 <script src="assets/vendor/typed.js/typed.umd.js"></script>
-
 <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-
 <script src="assets/js/main.js"></script>
-<script>
-  AOS.init({ duration: 800, once: true });
 
-  const HF_URL  = "https://hdtai24-stress-prediction-app.hf.space";
-  const overlay = document.getElementById('demoModalOverlay');
-  const openBtn = document.getElementById('openDemoBtn');
-  const closeBtn= document.getElementById('demoCloseBtn');
-  const iframe  = document.getElementById('demoIframe');
-  const loader  = document.getElementById('iframeLoader');
-  const ragOpenBtn =
-    document.getElementById("openRagDemoBtn");
-
-  const ragModalOverlay =
-    document.getElementById("ragDemoModalOverlay");
-
-  const ragCloseBtn =
-    document.getElementById("ragDemoCloseBtn");
-
-  const ragIframe =
-    document.getElementById("ragDemoIframe");
-
-  const ragLoader =
-    document.getElementById("ragIframeLoader");
-  function openDemo() {
-    if (!iframe.src || iframe.src === window.location.href) iframe.src = HF_URL;
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeDemo() {
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-if (ragOpenBtn) {
-
-  ragOpenBtn.addEventListener("click", () => {
-
-    ragModalOverlay.classList.add("active");
-
-    ragLoader.style.display = "flex";
-
-    ragIframe.src =
-      "https://hdtai24-medical-rag-assistant.hf.space";
-
-    ragIframe.onload = () => {
-      ragLoader.style.display = "none";
-    };
-
-  });
-
-  ragCloseBtn.addEventListener("click", () => {
-
-    ragModalOverlay.classList.remove("active");
-
-    ragIframe.src = "";
-
-  });
-
-  ragModalOverlay.addEventListener("click", (e) => {
-
-    if (e.target === ragModalOverlay) {
-
-      ragModalOverlay.classList.remove("active");
-
-      ragIframe.src = "";
-
-    }
-
-  });
-
-}
-  iframe.addEventListener('load', () => loader.classList.add('hidden'));
-  openBtn.addEventListener('click', openDemo);
-  closeBtn.addEventListener('click', closeDemo);
-  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeDemo(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDemo(); });
-</script>
 
 <a href="#" class="back-to-top">
   <i class="bi bi-arrow-up-short"></i>
