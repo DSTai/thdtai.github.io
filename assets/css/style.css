@@ -1327,38 +1327,75 @@ section {
       left: 6px;
       top: 8px;
       bottom: 8px;
-      width: 2px;
+      width: 3px;
       background:linear-gradient(
       to bottom,
-      #2dc997,
-      rgba(45,201,151,.1)
+      #63b3ed,
+      rgba(99,179,237,.1)
     );
     }
 
-    .timeline-list li {
-      position: relative;
-      margin-bottom: 18px;
+    .timeline-list li{
+      position:relative;
+      margin-bottom:24px;
+      padding-left:28px;
+    }
+    .timeline-list li::before{
+      content:'';
+      position:absolute;
+
+      left:2px;
+      top:3px;
+
+      width:10px;
+      height:10px;
+
+      border-radius:50%;
+      background:#63b3ed;
+
+      transition:all .3s ease;
+
+      box-shadow:
+        0 0 8px rgba(45,201,151,.5);
+    }
+    .timeline-list li:has(.timeline-link.active)::before{
+      width:16px;
+      height:16px;
+
+      left:-1px;
+      top:0;
+
+      background:#63b3ed;
+
+      box-shadow:
+        0 0 0 4px rgba(99,179,237,.2),
+        0 0 14px rgba(99,179,237,.6);
     }
 
     .timeline-link{
       position:relative;
       display:flex;
       align-items:center;
-      gap:16px;
-
+      min-height:60px;
+      min-width:220px;
       background:#1f242d;
       border-radius:12px;
       padding:14px 16px;
       margin-bottom:12px;
       text-decoration:none;
     }
+    .timeline-link.active .timeline-title{
+      font-weight:600;
+      color:#63b3ed;
+    }
 
     .timeline-date{
-      flex-shrink:0;
-      width:56px;
+      display:block;
+      margin-bottom:8px;
 
       font-size:12px;
       font-weight:700;
+      letter-spacing:.5px;
       color:#8b95a7;
     }
 
@@ -1376,15 +1413,11 @@ section {
     .timeline-link.active{
       background:#283241;
       box-shadow:
-        inset 4px 0 0 #2dc997,
+        inset 4px 0 0 #63b3ed,
         0 4px 20px rgba(45,201,151,.15);
       transform:translateX(6px);
     }
     
-
-    .timeline-link.active .timeline-title {
-      font-weight: 600;
-    }
 
     /* Back to home button reuse download-cv-btn style */
     .back-home-btn {
