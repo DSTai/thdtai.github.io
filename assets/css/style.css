@@ -1277,7 +1277,64 @@ section {
       0%, 100% { transform: scale(1); opacity: 1; }
       50%       { transform: scale(1.5); opacity: 0.6; }
     }
+/* ===== PROJECT 4 LIGHT THEME ===== */
 
+.demo-modal-light {
+  background: #ffffff;
+  border: 1px solid #dbe2ea;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+.demo-modal-light .demo-modal-header {
+  background: linear-gradient(135deg,#f8fafc,#eef2f7);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.demo-modal-light .demo-modal-header h5 {
+  color: #1a202c;
+}
+
+.demo-modal-light .accuracy-chip {
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+
+.demo-modal-light .demo-close-btn {
+  background: #ffffff;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.demo-modal-light .demo-close-btn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.demo-modal-light .demo-iframe-loader {
+  background: #f8fafc;
+}
+
+.demo-modal-light .loader-text {
+  color: #64748b;
+}
+
+.demo-modal-light .demo-modal-footer {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.demo-modal-light .footer-note {
+  color: #64748b;
+}
+
+.demo-modal-light .open-hf-btn {
+  color: #2563eb;
+}
+
+.demo-modal-light .open-hf-btn:hover {
+  color: #1d4ed8;
+}
 .back-to-top {
   position: fixed;
   right: 20px;

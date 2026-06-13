@@ -379,3 +379,58 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', onScroll);
     onScroll();
   })();
+
+  // ======================
+// PROJECT 4 DEMO
+// ======================
+
+const openVizDemoBtn =
+  document.getElementById("openVizDemoBtn");
+
+const vizModalOverlay =
+  document.getElementById("vizDemoModalOverlay");
+
+const vizCloseBtn =
+  document.getElementById("vizDemoCloseBtn");
+
+const vizIframe =
+  document.getElementById("vizDemoIframe");
+
+const vizLoader =
+  document.getElementById("vizIframeLoader");
+
+if (
+  openVizDemoBtn &&
+  vizModalOverlay &&
+  vizIframe
+) {
+
+  openVizDemoBtn.addEventListener("click", () => {
+
+    vizModalOverlay.classList.add("active");
+
+    vizLoader.style.display = "flex";
+
+    vizIframe.src =
+      "https://dstai.github.io/web-based-interactive-visualization/";
+
+    vizIframe.onload = () => {
+      vizLoader.style.display = "none";
+    };
+  });
+
+  vizCloseBtn.addEventListener("click", closeVizDemo);
+
+  vizModalOverlay.addEventListener("click", e => {
+    if (e.target === vizModalOverlay) {
+      closeVizDemo();
+    }
+  });
+
+  function closeVizDemo() {
+
+    vizModalOverlay.classList.remove("active");
+
+    vizIframe.src = "";
+  }
+}
